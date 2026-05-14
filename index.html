@@ -96,28 +96,29 @@
       padding-top: 6px;
     }
     .pill {
-      display: inline-flex; align-items: center; gap: 10px;
-      padding: 10px 18px;
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 7px 13px;
       border: 1px solid var(--line);
       border-radius: 999px;
       text-decoration: none;
-      font-size: 0.92rem;
+      font-size: 0.84rem;
       font-weight: 500;
+      white-space: nowrap;
       transition: border-color .18s, background .18s, color .18s, transform .18s;
     }
-    .pill svg { width: 16px; height: 16px; flex: none; opacity: .9; }
+    .pill svg { width: 13px; height: 13px; flex: none; opacity: .9; }
     .pill:hover { border-color: var(--accent); background: var(--accent-soft); color: var(--ink); transform: translateY(-1px); }
     .pill:hover svg { opacity: 1; }
     .pill__handle {
       color: var(--ink-mute);
       font-family: 'JetBrains Mono', ui-monospace, monospace;
-      font-size: 0.82rem;
+      font-size: 0.74rem;
       font-weight: 400;
     }
     .pill__handle::before {
       content: "·";
       color: var(--ink-faint);
-      margin-right: 4px;
+      margin-right: 3px;
     }
     .pill:hover .pill__handle { color: var(--ink); }
     .pill:hover .pill__handle::before { color: var(--accent); }
