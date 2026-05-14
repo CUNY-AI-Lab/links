@@ -5,15 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#0a0a0a">
   <title>CUNY AI Lab — Links</title>
-  <meta name="description" content="The CUNY AI Lab link library: socials, main site, the sandbox, hosted tools, workshops, documentation, presentations, and open-source projects from the Graduate Center, CUNY.">
+  <meta name="description" content="The CUNY AI Lab link library: socials, the sandbox and tools portal, workshops, Hugging Face models and spaces, presentations, and lab projects.">
   <meta property="og:title" content="CUNY AI Lab — Links">
-  <meta property="og:description" content="Socials, the sandbox, hosted tools, workshops, documentation, presentations, and open-source projects from the CUNY AI Lab.">
-  <meta property="og:image" content="logo.png">
+  <meta property="og:description" content="Socials, the sandbox and tools portal, workshops, Hugging Face models and spaces, presentations, and lab projects.">
+  <meta property="og:image" content="https://cuny-ai-lab.github.io/links/share.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:alt" content="CUNY AI Lab — Links. Programs · Tools · Workshops · Models · Spaces.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://cuny-ai-lab.github.io/links/">
+  <meta property="og:site_name" content="CUNY AI Lab">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="CUNY AI Lab — Links">
-  <meta name="twitter:description" content="Socials, the sandbox, hosted tools, workshops, documentation, presentations, and open-source projects from the CUNY AI Lab.">
+  <meta name="twitter:description" content="Socials, the sandbox and tools portal, workshops, Hugging Face models and spaces, presentations, and lab projects.">
+  <meta name="twitter:image" content="https://cuny-ai-lab.github.io/links/share.png">
+  <meta name="twitter:image:alt" content="CUNY AI Lab — Links. Programs · Tools · Workshops · Models · Spaces.">
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -206,45 +213,6 @@
       word-break: break-word;
     }
 
-    /* Subgroups within a section (more elaborate, deeper down) */
-    .subgroup { display: flex; flex-direction: column; gap: 10px; }
-    .subgroup + .subgroup { margin-top: 24px; padding-top: 22px; border-top: 1px dashed var(--line); }
-    .subgroup__label {
-      font-family: 'JetBrains Mono', ui-monospace, monospace;
-      font-size: 0.76rem; color: var(--ink-mute);
-      text-transform: uppercase; letter-spacing: 0.08em;
-      display: flex; align-items: center; gap: 10px;
-    }
-    .subgroup__label::after {
-      content: ""; flex: 1; height: 1px; background: var(--line);
-    }
-
-    /* Dense rows (for Open source index) */
-    .rows {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      overflow: hidden;
-      background: var(--line);
-    }
-    .row {
-      display: flex; flex-direction: column; gap: 3px;
-      padding: 13px 18px;
-      background: var(--bg);
-      text-decoration: none; color: inherit;
-      transition: background .14s;
-    }
-    .row:hover { background: rgba(255,255,255,0.045); }
-    .row__name {
-      font-family: 'JetBrains Mono', ui-monospace, monospace;
-      font-size: 0.84rem; font-weight: 500;
-    }
-    .row__name::after { content: " →"; color: var(--ink-faint); }
-    .row:hover .row__name::after { color: var(--accent); }
-    .row__desc { font-size: 0.78rem; color: var(--ink-mute); line-height: 1.4; }
-
     /* Footer */
     footer {
       border-top: 1px solid var(--line);
@@ -268,7 +236,9 @@
     .section:nth-of-type(3) { animation-delay: .15s; }
     .section:nth-of-type(4) { animation-delay: .2s; }
     .section:nth-of-type(5) { animation-delay: .25s; }
-    footer { animation: rise .5s .3s ease both; }
+    .section:nth-of-type(6) { animation-delay: .3s; }
+    .section:nth-of-type(7) { animation-delay: .35s; }
+    footer { animation: rise .5s .4s ease both; }
 
     @media (max-width: 560px) {
       .pill { padding: 8px 14px; font-size: 0.82rem; }
@@ -277,7 +247,7 @@
     }
     @media (prefers-reduced-motion: reduce) {
       .hero, .section, footer { animation: none; }
-      .primary a:hover, .card:hover, .row:hover, .pill:hover { transform: none; }
+      .primary a:hover, .card:hover, .pill:hover { transform: none; }
     }
   </style>
 </head>
@@ -288,7 +258,7 @@
       <div class="hero__mark">Graduate Center · City University of New York</div>
       <img src="logo.png" alt="CUNY AI Lab" class="hero__logo">
       <h1 class="hero__title">CUNY AI Lab <em>· links</em></h1>
-      <p class="hero__lede">A library of everything we publish — our socials, the sandbox, hosted tools, workshops, documentation, presentations, and open-source projects.</p>
+      <p class="hero__lede">A library of everything we publish — our socials, the sandbox, the tools portal, workshops, Hugging Face models and spaces, presentations, and lab projects.</p>
 
       <nav class="socials" aria-label="Social and contact">
         <a class="pill" href="https://www.linkedin.com/company/cuny-ai-lab/" target="_blank" rel="noopener">
@@ -306,6 +276,10 @@
         <a class="pill" href="https://github.com/CUNY-AI-Lab" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-3.2 19.5c.5.1.7-.2.7-.5v-1.8c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.4 1.1 3 .8.1-.7.4-1.1.6-1.4-2.2-.3-4.5-1.1-4.5-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.5 9.5 0 015 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.3 4.7-4.5 5 .4.3.7 1 .7 1.9v2.8c0 .3.2.6.7.5A10 10 0 0012 2z"/></svg>
           GitHub <span class="pill__handle">/CUNY-AI-Lab</span>
+        </a>
+        <a class="pill" href="https://huggingface.co/CUNYGradCenter" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="9.5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="9" cy="11" r="1.2"/><circle cx="15" cy="11" r="1.2"/><path d="M8 14.5c1 1.3 2.4 2 4 2s3-.7 4-2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          Hugging Face <span class="pill__handle">/CUNYGradCenter</span>
         </a>
         <a class="pill" href="mailto:ailab@gc.cuny.edu">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
@@ -326,7 +300,7 @@
         </a>
         <a href="https://tools.ailab.gc.cuny.edu/" target="_blank" rel="noopener">
           <span class="primary__host">tools.ailab.gc.cuny.edu</span>
-          <span class="primary__title">Tools</span>
+          <span class="primary__title">Tools Portal</span>
           <span class="primary__desc">Hosted utilities and lab-built applications.</span>
         </a>
         <a href="https://github.com/CUNY-AI-Lab" target="_blank" rel="noopener">
@@ -344,7 +318,6 @@
           <span class="section__title">Programs <span class="section__count">02</span></span>
           <span class="section__hint"></span>
         </summary>
-        <p class="section__intro">CUNY-wide initiatives the lab develops and supports.</p>
         <div class="grid">
           <a class="card" href="https://aitoolkit.commons.gc.cuny.edu/" target="_blank" rel="noopener">
             <span class="card__eyebrow">Teach@CUNY</span>
@@ -363,149 +336,274 @@
 
       <details class="section" open>
         <summary>
-          <span class="section__title">Tools &amp; platforms <span class="section__count">07</span></span>
+          <span class="section__title">Tools <span class="section__count">14</span></span>
           <span class="section__hint"></span>
         </summary>
-        <p class="section__intro">Hosted applications and platforms — what we run for the CUNY community.</p>
-
-        <div class="subgroup">
-          <div class="subgroup__label">Hosted</div>
-          <div class="grid">
-            <a class="card" href="https://chat.ailab.gc.cuny.edu/" target="_blank" rel="noopener">
-              <span class="card__eyebrow">Sandbox</span>
-              <span class="card__title">CUNY AI Lab Sandbox</span>
-              <span class="card__desc">Lab-hosted Open WebUI chat interface for educators and researchers across CUNY.</span>
-              <span class="card__host">chat.ailab.gc.cuny.edu</span>
-            </a>
-            <a class="card" href="https://cuny-ai-lab.github.io/sandbox-docs/" target="_blank" rel="noopener">
-              <span class="card__eyebrow">Docs</span>
-              <span class="card__title">Sandbox Documentation</span>
-              <span class="card__desc">Support docs for teachers and researchers using the Sandbox via Open WebUI.</span>
-              <span class="card__host">cuny-ai-lab.github.io/sandbox-docs</span>
-            </a>
-            <a class="card" href="https://tools.ailab.gc.cuny.edu/" target="_blank" rel="noopener">
-              <span class="card__eyebrow">Suite</span>
-              <span class="card__title">Lab Tools Suite</span>
-              <span class="card__desc">Hosted utilities — slide builder, accessibility remediation, OCR, and more.</span>
-              <span class="card__host">tools.ailab.gc.cuny.edu</span>
-            </a>
-          </div>
-        </div>
-
-        <div class="subgroup">
-          <div class="subgroup__label">Applications</div>
-          <div class="grid">
-            <a class="card" href="https://github.com/CUNY-AI-Lab/slide-maker" target="_blank" rel="noopener">
-              <span class="card__eyebrow">Authoring</span>
-              <span class="card__title">Slide Maker</span>
-              <span class="card__desc">Plug-and-play slide builder with agentic chat, resource templates, and onscreen editing.</span>
-              <span class="card__host">github.com/CUNY-AI-Lab/slide-maker</span>
-            </a>
-            <a class="card" href="https://github.com/CUNY-AI-Lab/marginalia" target="_blank" rel="noopener">
-              <span class="card__eyebrow">Reading</span>
-              <span class="card__title">Marginalia</span>
-              <span class="card__desc">A reading assistant that turns documents into conversational agents.</span>
-              <span class="card__host">github.com/CUNY-AI-Lab/marginalia</span>
-            </a>
-            <a class="card" href="https://github.com/CUNY-AI-Lab/manifold-companion" target="_blank" rel="noopener">
-              <span class="card__eyebrow">Archives</span>
-              <span class="card__title">Manifold Companion</span>
-              <span class="card__desc">Multi-user OCR platform for manuscript digitization — Express, React, AWS Bedrock.</span>
-              <span class="card__host">github.com/CUNY-AI-Lab/manifold-companion</span>
-            </a>
-            <a class="card" href="https://github.com/CUNY-AI-Lab/pdf-accessibility-app" target="_blank" rel="noopener">
-              <span class="card__eyebrow">Accessibility</span>
-              <span class="card__title">PDF Accessibility</span>
-              <span class="card__desc">Execution-first PDF accessibility remediation app, with an AWS Bedrock backend.</span>
-              <span class="card__host">github.com/CUNY-AI-Lab/pdf-accessibility-app</span>
-            </a>
-            <a class="card" href="https://github.com/CUNY-AI-Lab/a11y-check" target="_blank" rel="noopener">
-              <span class="card__eyebrow">Accessibility</span>
-              <span class="card__title">A11y Check</span>
-              <span class="card__desc">PDF accessibility and formatting checker — built for dissertation workflows.</span>
-              <span class="card__host">github.com/CUNY-AI-Lab/a11y-check</span>
-            </a>
-            <a class="card" href="https://github.com/CUNY-AI-Lab/OWU-carbon-emission" target="_blank" rel="noopener">
-              <span class="card__eyebrow">Sustainability</span>
-              <span class="card__title">OWU Carbon Emission</span>
-              <span class="card__desc">Open WebUI filter that estimates energy use and CO₂ emissions for remote LLM calls.</span>
-              <span class="card__host">github.com/CUNY-AI-Lab/OWU-carbon-emission</span>
-            </a>
-          </div>
+        <div class="grid">
+          <a class="card" href="https://chat.ailab.gc.cuny.edu/" target="_blank" rel="noopener">
+            <span class="card__eyebrow">Sandbox</span>
+            <span class="card__title">CUNY AI Lab Sandbox</span>
+            <span class="card__desc">Lab-hosted Open WebUI chat interface for educators and researchers.</span>
+            <span class="card__host">chat.ailab.gc.cuny.edu</span>
+          </a>
+          <a class="card" href="https://tools.ailab.gc.cuny.edu/" target="_blank" rel="noopener">
+            <span class="card__eyebrow">Portal</span>
+            <span class="card__title">Tools Portal</span>
+            <span class="card__desc">Hosted utilities — slide builder, accessibility remediation, OCR, transcription, and more.</span>
+            <span class="card__host">tools.ailab.gc.cuny.edu</span>
+          </a>
+          <a class="card" href="https://cuny-ai-lab.github.io/sandbox-docs/" target="_blank" rel="noopener">
+            <span class="card__eyebrow">Docs</span>
+            <span class="card__title">Sandbox Documentation</span>
+            <span class="card__desc">Support documentation for teachers and researchers using the Sandbox.</span>
+            <span class="card__host">cuny-ai-lab.github.io/sandbox-docs</span>
+          </a>
+          <a class="card" href="https://tools.ailab.gc.cuny.edu/agent-studio" target="_blank" rel="noopener">
+            <span class="card__eyebrow">Tools Portal</span>
+            <span class="card__title">Agent Studio</span>
+            <span class="card__desc">AI research assistant for exploring data, searching academic databases, and creating visualizations.</span>
+            <span class="card__host">tools.ailab.gc.cuny.edu/agent-studio</span>
+          </a>
+          <a class="card" href="https://tools.ailab.gc.cuny.edu/site-studio/" target="_blank" rel="noopener">
+            <span class="card__eyebrow">Tools Portal</span>
+            <span class="card__title">Site Studio</span>
+            <span class="card__desc">Build academic websites with AI assistance — portfolios, CVs, and research pages through conversation.</span>
+            <span class="card__host">tools.ailab.gc.cuny.edu/site-studio</span>
+          </a>
+          <a class="card" href="https://tools.ailab.gc.cuny.edu/alt-text/" target="_blank" rel="noopener">
+            <span class="card__eyebrow">Tools Portal</span>
+            <span class="card__title">Image Description</span>
+            <span class="card__desc">Generate captions, alt-text, and detailed image descriptions using AI vision models.</span>
+            <span class="card__host">tools.ailab.gc.cuny.edu/alt-text</span>
+          </a>
+          <a class="card" href="https://tools.ailab.gc.cuny.edu/asr/" target="_blank" rel="noopener">
+            <span class="card__eyebrow">Tools Portal</span>
+            <span class="card__title">Audio Transcription</span>
+            <span class="card__desc">Upload audio or video files and get accurate transcriptions with timestamps using Whisper.</span>
+            <span class="card__host">tools.ailab.gc.cuny.edu/asr</span>
+          </a>
+          <a class="card" href="https://tools.ailab.gc.cuny.edu/ocr/" target="_blank" rel="noopener">
+            <span class="card__eyebrow">Tools Portal</span>
+            <span class="card__title">Document OCR</span>
+            <span class="card__desc">Extract text from PDFs and scanned images with high-accuracy optical character recognition.</span>
+            <span class="card__host">tools.ailab.gc.cuny.edu/ocr</span>
+          </a>
+          <a class="card" href="https://github.com/CUNY-AI-Lab/slide-maker" target="_blank" rel="noopener">
+            <span class="card__eyebrow">Application</span>
+            <span class="card__title">Slide Maker</span>
+            <span class="card__desc">Plug-and-play slide builder with agentic chat, resource templates, and onscreen editing.</span>
+            <span class="card__host">github.com/CUNY-AI-Lab/slide-maker</span>
+          </a>
+          <a class="card" href="https://github.com/CUNY-AI-Lab/marginalia" target="_blank" rel="noopener">
+            <span class="card__eyebrow">Application</span>
+            <span class="card__title">Marginalia</span>
+            <span class="card__desc">A reading assistant that turns documents into conversational agents.</span>
+            <span class="card__host">github.com/CUNY-AI-Lab/marginalia</span>
+          </a>
+          <a class="card" href="https://github.com/CUNY-AI-Lab/manifold-companion" target="_blank" rel="noopener">
+            <span class="card__eyebrow">Application</span>
+            <span class="card__title">Manifold Companion</span>
+            <span class="card__desc">Multi-user OCR platform for manuscript digitization — Express, React, AWS Bedrock.</span>
+            <span class="card__host">github.com/CUNY-AI-Lab/manifold-companion</span>
+          </a>
+          <a class="card" href="https://github.com/CUNY-AI-Lab/pdf-accessibility-app" target="_blank" rel="noopener">
+            <span class="card__eyebrow">Application</span>
+            <span class="card__title">PDF Accessibility</span>
+            <span class="card__desc">Execution-first PDF accessibility remediation app with an AWS Bedrock backend.</span>
+            <span class="card__host">github.com/CUNY-AI-Lab/pdf-accessibility-app</span>
+          </a>
+          <a class="card" href="https://github.com/CUNY-AI-Lab/a11y-check" target="_blank" rel="noopener">
+            <span class="card__eyebrow">Application</span>
+            <span class="card__title">A11y Check</span>
+            <span class="card__desc">PDF accessibility and formatting checker — built for dissertation workflows.</span>
+            <span class="card__host">github.com/CUNY-AI-Lab/a11y-check</span>
+          </a>
+          <a class="card" href="https://github.com/CUNY-AI-Lab/OWU-carbon-emission" target="_blank" rel="noopener">
+            <span class="card__eyebrow">Application</span>
+            <span class="card__title">OWU Carbon Emission</span>
+            <span class="card__desc">Open WebUI filter that estimates energy use and CO₂ emissions for remote LLM calls.</span>
+            <span class="card__host">github.com/CUNY-AI-Lab/OWU-carbon-emission</span>
+          </a>
         </div>
       </details>
 
       <details class="section" open>
         <summary>
-          <span class="section__title">Workshops &amp; documentation <span class="section__count">08</span></span>
+          <span class="section__title">Workshops <span class="section__count">13</span></span>
           <span class="section__hint"></span>
         </summary>
-        <p class="section__intro">Teaching materials and how-to guides we run with CUNY faculty and ITP fellows.</p>
-
-        <div class="subgroup">
-          <div class="subgroup__label">Sandbox · Open WebUI</div>
-          <div class="grid">
-            <a class="card" href="https://cuny-ai-lab.github.io/system-prompting/" target="_blank" rel="noopener">
-              <span class="card__eyebrow">Workshop 1</span>
-              <span class="card__title">Composing System Prompts</span>
-              <span class="card__desc">Writing effective system prompts for Open WebUI models in the Sandbox.</span>
-              <span class="card__host">cuny-ai-lab.github.io/system-prompting</span>
-            </a>
-            <a class="card" href="https://cuny-ai-lab.github.io/knowledge-collections/" target="_blank" rel="noopener">
-              <span class="card__eyebrow">Workshop 2</span>
-              <span class="card__title">Curating Knowledge Collections</span>
-              <span class="card__desc">Building and curating knowledge collections in the CUNY AI Lab Sandbox.</span>
-              <span class="card__host">cuny-ai-lab.github.io/knowledge-collections</span>
-            </a>
-          </div>
+        <div class="grid">
+          <a class="card" href="https://cuny-ai-lab.github.io/system-prompting/" target="_blank" rel="noopener">
+            <span class="card__eyebrow">Sandbox · Workshop 1</span>
+            <span class="card__title">Composing System Prompts</span>
+            <span class="card__desc">Writing effective system prompts for Open WebUI models in the Sandbox.</span>
+            <span class="card__host">cuny-ai-lab.github.io/system-prompting</span>
+          </a>
+          <a class="card" href="https://cuny-ai-lab.github.io/knowledge-collections/" target="_blank" rel="noopener">
+            <span class="card__eyebrow">Sandbox · Workshop 2</span>
+            <span class="card__title">Curating Knowledge Collections</span>
+            <span class="card__desc">Building and curating knowledge collections in the CUNY AI Lab Sandbox.</span>
+            <span class="card__host">cuny-ai-lab.github.io/knowledge-collections</span>
+          </a>
+          <a class="card" href="https://github.com/CUNY-AI-Lab/skills-tools" target="_blank" rel="noopener">
+            <span class="card__eyebrow">Sandbox · Workshop 3</span>
+            <span class="card__title">Skills &amp; Tools — CCNY PD</span>
+            <span class="card__desc">CCNY professional development workshop on skills, tools, and agentic workflows in the Sandbox.</span>
+            <span class="card__host">github.com/CUNY-AI-Lab/skills-tools</span>
+          </a>
+          <a class="card" href="https://github.com/CUNY-AI-Lab/workshops/tree/master/ai-policy-basics" target="_blank" rel="noopener">
+            <span class="card__eyebrow">Faculty development</span>
+            <span class="card__title">AI Basics &amp; Policy Statements</span>
+            <span class="card__desc">Demystifies AI and helps instructors craft thoughtful, responsive classroom policies.</span>
+            <span class="card__host">github.com/CUNY-AI-Lab/workshops/ai-policy-basics</span>
+          </a>
+          <a class="card" href="https://github.com/CUNY-AI-Lab/workshops/tree/master/disciplinary-thinking" target="_blank" rel="noopener">
+            <span class="card__eyebrow">Faculty development</span>
+            <span class="card__title">AI Literacy &amp; Disciplinary Thinking</span>
+            <span class="card__desc">Integrating AI literacy into disciplinary teaching and assignment design.</span>
+            <span class="card__host">github.com/CUNY-AI-Lab/workshops/disciplinary-thinking</span>
+          </a>
+          <a class="card" href="https://github.com/CUNY-AI-Lab/workshops/tree/master/game-based-learning" target="_blank" rel="noopener">
+            <span class="card__eyebrow">Faculty development</span>
+            <span class="card__title">AI Literacy &amp; Game-Based Learning</span>
+            <span class="card__desc">Game-based strategies for teaching with and about AI — including choose-your-own-adventure prompting.</span>
+            <span class="card__host">github.com/CUNY-AI-Lab/workshops/game-based-learning</span>
+          </a>
+          <a class="card" href="https://github.com/CUNY-AI-Lab/workshops/tree/master/prompting-in-praxis" target="_blank" rel="noopener">
+            <span class="card__eyebrow">Faculty development</span>
+            <span class="card__title">Prompting in Praxis</span>
+            <span class="card__desc">LLM concepts and hands-on prompting techniques for academics and instructors.</span>
+            <span class="card__host">github.com/CUNY-AI-Lab/workshops/prompting-in-praxis</span>
+          </a>
+          <a class="card" href="https://github.com/CUNY-AI-Lab/workshops/tree/master/tcuny-ai-toolkit" target="_blank" rel="noopener">
+            <span class="card__eyebrow">Faculty development</span>
+            <span class="card__title">Teach@CUNY AI Toolkit · workshop</span>
+            <span class="card__desc">Workshop session built around the Teach@CUNY AI Toolkit resource.</span>
+            <span class="card__host">github.com/CUNY-AI-Lab/workshops/tcuny-ai-toolkit</span>
+          </a>
+          <a class="card" href="https://cuny-ai-lab.github.io/critical-play/" target="_blank" rel="noopener">
+            <span class="card__eyebrow">ITP Lab</span>
+            <span class="card__title">Critical Play with LLMs</span>
+            <span class="card__desc">ITP Lab workshop on playful, critical engagement with large language models.</span>
+            <span class="card__host">cuny-ai-lab.github.io/critical-play</span>
+          </a>
+          <a class="card" href="https://cuny-ai-lab.github.io/creative-coding/" target="_blank" rel="noopener">
+            <span class="card__eyebrow">ITP Lab</span>
+            <span class="card__title">Creative Coding with Generative AI</span>
+            <span class="card__desc">Hands-on creative coding session, led by Zach Muhlbauer &amp; Stefano Morello.</span>
+            <span class="card__host">cuny-ai-lab.github.io/creative-coding</span>
+          </a>
+          <a class="card" href="https://cuny-ai-lab.github.io/vibe-coding-how-to/" target="_blank" rel="noopener">
+            <span class="card__eyebrow">Vibe coding</span>
+            <span class="card__title">Vibe Coding How-To</span>
+            <span class="card__desc">Operational instructions for AI-assisted development with Gemini CLI.</span>
+            <span class="card__host">cuny-ai-lab.github.io/vibe-coding-how-to</span>
+          </a>
+          <a class="card" href="https://cuny-ai-lab.github.io/Vibe-Coding-Workshop/" target="_blank" rel="noopener">
+            <span class="card__eyebrow">Vibe coding</span>
+            <span class="card__title">Vibe Coding Workshop</span>
+            <span class="card__desc">Live workshop materials — pair-program with an LLM, ship in an afternoon.</span>
+            <span class="card__host">cuny-ai-lab.github.io/Vibe-Coding-Workshop</span>
+          </a>
+          <a class="card" href="https://cuny-ai-lab.github.io/vibe-coding-prototypes/" target="_blank" rel="noopener">
+            <span class="card__eyebrow">Vibe coding</span>
+            <span class="card__title">Vibe Coding Prototypes</span>
+            <span class="card__desc">A showcase of prototypes produced during vibe coding sessions.</span>
+            <span class="card__host">cuny-ai-lab.github.io/vibe-coding-prototypes</span>
+          </a>
+          <a class="card" href="https://cuny-ai-lab.github.io/gen-dev-foundations/" target="_blank" rel="noopener">
+            <span class="card__eyebrow">Gen dev</span>
+            <span class="card__title">Gen Dev Foundations</span>
+            <span class="card__desc">Foundational concepts for generative development practice.</span>
+            <span class="card__host">cuny-ai-lab.github.io/gen-dev-foundations</span>
+          </a>
         </div>
+      </details>
 
-        <div class="subgroup">
-          <div class="subgroup__label">ITP Lab — Critical &amp; creative practice</div>
-          <div class="grid">
-            <a class="card" href="https://cuny-ai-lab.github.io/critical-play/" target="_blank" rel="noopener">
-              <span class="card__eyebrow">ITP Lab</span>
-              <span class="card__title">Critical Play with LLMs</span>
-              <span class="card__desc">Workshop slides on playful, critical engagement with large language models.</span>
-              <span class="card__host">cuny-ai-lab.github.io/critical-play</span>
-            </a>
-            <a class="card" href="https://cuny-ai-lab.github.io/creative-coding/" target="_blank" rel="noopener">
-              <span class="card__eyebrow">ITP Lab</span>
-              <span class="card__title">Creative Coding with Generative AI</span>
-              <span class="card__desc">Hands-on creative coding session, led by Zach Muhlbauer &amp; Stefano Morello.</span>
-              <span class="card__host">cuny-ai-lab.github.io/creative-coding</span>
-            </a>
-          </div>
-        </div>
-
-        <div class="subgroup">
-          <div class="subgroup__label">Vibe coding &amp; gen dev</div>
-          <div class="grid">
-            <a class="card" href="https://cuny-ai-lab.github.io/vibe-coding-how-to/" target="_blank" rel="noopener">
-              <span class="card__eyebrow">Guide</span>
-              <span class="card__title">Vibe Coding How-To</span>
-              <span class="card__desc">Operational instructions for AI-assisted development with Gemini CLI.</span>
-              <span class="card__host">cuny-ai-lab.github.io/vibe-coding-how-to</span>
-            </a>
-            <a class="card" href="https://cuny-ai-lab.github.io/Vibe-Coding-Workshop/" target="_blank" rel="noopener">
-              <span class="card__eyebrow">Workshop</span>
-              <span class="card__title">Vibe Coding Workshop</span>
-              <span class="card__desc">Live workshop materials — pair-program with an LLM, ship in an afternoon.</span>
-              <span class="card__host">cuny-ai-lab.github.io/Vibe-Coding-Workshop</span>
-            </a>
-            <a class="card" href="https://cuny-ai-lab.github.io/vibe-coding-prototypes/" target="_blank" rel="noopener">
-              <span class="card__eyebrow">Showcase</span>
-              <span class="card__title">Vibe Coding Prototypes</span>
-              <span class="card__desc">A showcase of prototypes produced during vibe coding sessions.</span>
-              <span class="card__host">cuny-ai-lab.github.io/vibe-coding-prototypes</span>
-            </a>
-            <a class="card" href="https://cuny-ai-lab.github.io/gen-dev-foundations/" target="_blank" rel="noopener">
-              <span class="card__eyebrow">Foundations</span>
-              <span class="card__title">Gen Dev Foundations</span>
-              <span class="card__desc">Foundational concepts for generative development practice.</span>
-              <span class="card__host">cuny-ai-lab.github.io/gen-dev-foundations</span>
-            </a>
-          </div>
+      <details class="section" open>
+        <summary>
+          <span class="section__title">Hugging Face <span class="section__count">13</span></span>
+          <span class="section__hint"></span>
+        </summary>
+        <div class="grid">
+          <a class="card" href="https://huggingface.co/CUNYGradCenter" target="_blank" rel="noopener">
+            <span class="card__eyebrow">Org</span>
+            <span class="card__title">CUNYGradCenter</span>
+            <span class="card__desc">The CUNY Graduate Center organization on Hugging Face — shared spaces and models.</span>
+            <span class="card__host">huggingface.co/CUNYGradCenter</span>
+          </a>
+          <a class="card" href="https://huggingface.co/collections/milwright/critical-ai-literacy-institute-cali-gc-cuny-68cb23ee3661dafb9323291f" target="_blank" rel="noopener">
+            <span class="card__eyebrow">Collection</span>
+            <span class="card__title">Critical AI Literacy Institute · CALI</span>
+            <span class="card__desc">Curated collection of CALI-related spaces and resources.</span>
+            <span class="card__host">huggingface.co/collections/milwright/critical-ai-literacy-institute-cali-gc-cuny</span>
+          </a>
+          <a class="card" href="https://huggingface.co/milwright/qwen-8b-dialog-v1" target="_blank" rel="noopener">
+            <span class="card__eyebrow">Model · fine-tune</span>
+            <span class="card__title">qwen-8b-dialog-v1</span>
+            <span class="card__desc">Qwen3-8B dialogue fine-tune (GGUF) trained on UltraChat-style conversational data.</span>
+            <span class="card__host">huggingface.co/milwright/qwen-8b-dialog-v1</span>
+          </a>
+          <a class="card" href="https://huggingface.co/milwright/cpt-qwen-composer" target="_blank" rel="noopener">
+            <span class="card__eyebrow">Model · CPT</span>
+            <span class="card__title">cpt-qwen-composer</span>
+            <span class="card__desc">Continued-pretrained Qwen variant tuned for composition tasks (GGUF).</span>
+            <span class="card__host">huggingface.co/milwright/cpt-qwen-composer</span>
+          </a>
+          <a class="card" href="https://huggingface.co/milwright/cloze-reader-qwen3.5-0.8b-lora" target="_blank" rel="noopener">
+            <span class="card__eyebrow">Model · LoRA</span>
+            <span class="card__title">cloze-reader-qwen3.5-0.8b-lora</span>
+            <span class="card__desc">LoRA adapter on Qwen3.5-0.8B for cloze reading comprehension and vocabulary tasks.</span>
+            <span class="card__host">huggingface.co/milwright/cloze-reader-qwen3.5-0.8b-lora</span>
+          </a>
+          <a class="card" href="https://huggingface.co/spaces/milwright/chatui-helper" target="_blank" rel="noopener">
+            <span class="card__eyebrow">Space · Gradio</span>
+            <span class="card__title">ChatUI Helper</span>
+            <span class="card__desc">Create customizable AI chat interfaces for Hugging Face Spaces.</span>
+            <span class="card__host">huggingface.co/spaces/milwright/chatui-helper</span>
+          </a>
+          <a class="card" href="https://huggingface.co/spaces/milwright/cloze-reader" target="_blank" rel="noopener">
+            <span class="card__eyebrow">Space · Docker</span>
+            <span class="card__title">Cloze Reader</span>
+            <span class="card__desc">Game-based cloze-deletion reader that blanks words from public-domain passages.</span>
+            <span class="card__host">huggingface.co/spaces/milwright/cloze-reader</span>
+          </a>
+          <a class="card" href="https://huggingface.co/spaces/milwright/cloze-leaderboard" target="_blank" rel="noopener">
+            <span class="card__eyebrow">Space · Docker</span>
+            <span class="card__title">Cloze Leaderboard</span>
+            <span class="card__desc">Leaderboard tracking model performance on cloze reading-comprehension benchmarks.</span>
+            <span class="card__host">huggingface.co/spaces/milwright/cloze-leaderboard</span>
+          </a>
+          <a class="card" href="https://huggingface.co/spaces/milwright/historical-ocr" target="_blank" rel="noopener">
+            <span class="card__eyebrow">Space · Streamlit</span>
+            <span class="card__title">Historical OCR</span>
+            <span class="card__desc">OCR pipeline tuned for historical documents and manuscript pages.</span>
+            <span class="card__host">huggingface.co/spaces/milwright/historical-ocr</span>
+          </a>
+          <a class="card" href="https://huggingface.co/spaces/milwright/chat-adventure-games" target="_blank" rel="noopener">
+            <span class="card__eyebrow">Space · Gradio</span>
+            <span class="card__title">Chat Adventure Games</span>
+            <span class="card__desc">Choose-your-own-adventure games powered by chat models — companion to the game-based learning workshop.</span>
+            <span class="card__host">huggingface.co/spaces/milwright/chat-adventure-games</span>
+          </a>
+          <a class="card" href="https://huggingface.co/spaces/milwright/reddit-dashboard" target="_blank" rel="noopener">
+            <span class="card__eyebrow">Space · Streamlit</span>
+            <span class="card__title">Reddit Dashboard</span>
+            <span class="card__desc">Streamlit dashboard over a research corpus of CUNY-community Reddit threads.</span>
+            <span class="card__host">huggingface.co/spaces/milwright/reddit-dashboard</span>
+          </a>
+          <a class="card" href="https://huggingface.co/spaces/CUNYGradCenter/AmigAI-SPAN105" target="_blank" rel="noopener">
+            <span class="card__eyebrow">Space · Gradio</span>
+            <span class="card__title">AmigAI · SPAN 105</span>
+            <span class="card__desc">Spanish-language AI tutor space developed for SPAN 105 at the Graduate Center.</span>
+            <span class="card__host">huggingface.co/spaces/CUNYGradCenter/AmigAI-SPAN105</span>
+          </a>
+          <a class="card" href="https://huggingface.co/spaces/CUNYGradCenter/Espanol_Hunter" target="_blank" rel="noopener">
+            <span class="card__eyebrow">Space · Gradio</span>
+            <span class="card__title">Español Hunter</span>
+            <span class="card__desc">Spanish-language exploratory space hosted under the CUNYGradCenter org.</span>
+            <span class="card__host">huggingface.co/spaces/CUNYGradCenter/Espanol_Hunter</span>
+          </a>
         </div>
       </details>
 
@@ -514,12 +612,11 @@
           <span class="section__title">Presentations <span class="section__count">02</span></span>
           <span class="section__hint"></span>
         </summary>
-        <p class="section__intro">Conference and campus talks given by the lab.</p>
         <div class="grid">
           <a class="card" href="https://cuny-ai-lab.github.io/cali-narst/" target="_blank" rel="noopener">
             <span class="card__eyebrow">NARST 2026</span>
             <span class="card__title">CALI · NARST 2026</span>
-            <span class="card__desc">Critical AI Literacy Institute deck presented at NARST 2026.</span>
+            <span class="card__desc">Critical AI Literacy Institute presentation deck for NARST 2026.</span>
             <span class="card__host">cuny-ai-lab.github.io/cali-narst</span>
           </a>
           <a class="card" href="https://cuny-ai-lab.github.io/cali-brooklyn/" target="_blank" rel="noopener">
@@ -533,99 +630,77 @@
 
       <details class="section">
         <summary>
-          <span class="section__title">Open-source index <span class="section__count">14</span></span>
+          <span class="section__title">Ancillary projects <span class="section__count">11</span></span>
           <span class="section__hint"></span>
         </summary>
-        <p class="section__intro">A flat index of public repositories under the <a href="https://github.com/CUNY-AI-Lab" style="color: var(--ink); border-bottom: 1px solid var(--line);">CUNY-AI-Lab</a> organization.</p>
-
-        <div class="subgroup">
-          <div class="subgroup__label">Web · sites &amp; deploy</div>
-          <div class="rows">
-            <a class="row" href="https://github.com/CUNY-AI-Lab/CUNY-AI-Lab-website" target="_blank" rel="noopener">
-              <span class="row__name">CUNY-AI-Lab-website</span>
-              <span class="row__desc">Source for ailab.gc.cuny.edu.</span>
-            </a>
-            <a class="row" href="https://github.com/CUNY-AI-Lab/cail-deploy" target="_blank" rel="noopener">
-              <span class="row__name">cail-deploy</span>
-              <span class="row__desc">Kale Deploy control plane, Cloudflare Workers stack, agent integrations.</span>
-            </a>
-            <a class="row" href="https://github.com/CUNY-AI-Lab/site-studio" target="_blank" rel="noopener">
-              <span class="row__name">site-studio</span>
-              <span class="row__desc">AI-assisted site builder.</span>
-            </a>
-          </div>
-        </div>
-
-        <div class="subgroup">
-          <div class="subgroup__label">Apps · authoring &amp; reading</div>
-          <div class="rows">
-            <a class="row" href="https://github.com/CUNY-AI-Lab/slide-maker" target="_blank" rel="noopener">
-              <span class="row__name">slide-maker</span>
-              <span class="row__desc">Plug-and-play slide builder with agentic chat and onscreen editing.</span>
-            </a>
-            <a class="row" href="https://github.com/CUNY-AI-Lab/marginalia" target="_blank" rel="noopener">
-              <span class="row__name">marginalia</span>
-              <span class="row__desc">Reading assistant — documents into conversational agents.</span>
-            </a>
-            <a class="row" href="https://github.com/CUNY-AI-Lab/manifold-companion" target="_blank" rel="noopener">
-              <span class="row__name">manifold-companion</span>
-              <span class="row__desc">Multi-user OCR for manuscript digitization (Express + React + AWS Bedrock).</span>
-            </a>
-            <a class="row" href="https://github.com/CUNY-AI-Lab/agent-studio" target="_blank" rel="noopener">
-              <span class="row__name">agent-studio</span>
-              <span class="row__desc">Agent workflow builder.</span>
-            </a>
-            <a class="row" href="https://github.com/CUNY-AI-Lab/skills-tools" target="_blank" rel="noopener">
-              <span class="row__name">skills-tools</span>
-              <span class="row__desc">Skills and tooling for agentic workflows.</span>
-            </a>
-          </div>
-        </div>
-
-        <div class="subgroup">
-          <div class="subgroup__label">Accessibility</div>
-          <div class="rows">
-            <a class="row" href="https://github.com/CUNY-AI-Lab/pdf-accessibility-app" target="_blank" rel="noopener">
-              <span class="row__name">pdf-accessibility-app</span>
-              <span class="row__desc">Execution-first PDF accessibility remediation app.</span>
-            </a>
-            <a class="row" href="https://github.com/CUNY-AI-Lab/pdf-accessibility" target="_blank" rel="noopener">
-              <span class="row__name">pdf-accessibility</span>
-              <span class="row__desc">AWS-based PDF remediation with Bedrock vision models (WCAG 2.1 AA).</span>
-            </a>
-            <a class="row" href="https://github.com/CUNY-AI-Lab/a11y-check" target="_blank" rel="noopener">
-              <span class="row__name">a11y-check</span>
-              <span class="row__desc">PDF accessibility checker for dissertations.</span>
-            </a>
-          </div>
-        </div>
-
-        <div class="subgroup">
-          <div class="subgroup__label">Infrastructure · inference &amp; sustainability</div>
-          <div class="rows">
-            <a class="row" href="https://github.com/CUNY-AI-Lab/OWU-carbon-emission" target="_blank" rel="noopener">
-              <span class="row__name">OWU-carbon-emission</span>
-              <span class="row__desc">Open WebUI filter that estimates energy use and CO₂ for LLM API calls.</span>
-            </a>
-            <a class="row" href="https://github.com/CUNY-AI-Lab/inference-knobs" target="_blank" rel="noopener">
-              <span class="row__name">inference-knobs</span>
-              <span class="row__desc">Inference parameter exploration.</span>
-            </a>
-          </div>
-        </div>
-
-        <div class="subgroup">
-          <div class="subgroup__label">Workshops &amp; teaching</div>
-          <div class="rows">
-            <a class="row" href="https://github.com/CUNY-AI-Lab/workshops" target="_blank" rel="noopener">
-              <span class="row__name">workshops</span>
-              <span class="row__desc">Umbrella repo — workshops introducing educators to teaching with gen AI.</span>
-            </a>
-            <a class="row" href="https://github.com/CUNY-AI-Lab" target="_blank" rel="noopener">
-              <span class="row__name">→ browse all repositories</span>
-              <span class="row__desc">See the full CUNY-AI-Lab GitHub organization.</span>
-            </a>
-          </div>
+        <p class="section__intro">Recent individual projects from lab affiliates — Zach Muhlbauer (zmuhls / milwright), Stephen Zweibel (szweibel), and Stefano Morello (smorello87).</p>
+        <div class="grid">
+          <a class="card" href="https://github.com/zmuhls/em-model-organisms" target="_blank" rel="noopener">
+            <span class="card__eyebrow">Zach</span>
+            <span class="card__title">em-model-organisms</span>
+            <span class="card__desc">Model organisms for emergent misalignment — API-only Python testbeds.</span>
+            <span class="card__host">github.com/zmuhls/em-model-organisms</span>
+          </a>
+          <a class="card" href="https://zmuhls.github.io/scrolling-for-godot/" target="_blank" rel="noopener">
+            <span class="card__eyebrow">Zach</span>
+            <span class="card__title">Scrolling for Godot</span>
+            <span class="card__desc">A web-based absurdist scrollplay between human, chatbot, and system messages — after Beckett.</span>
+            <span class="card__host">zmuhls.github.io/scrolling-for-godot</span>
+          </a>
+          <a class="card" href="https://zmuhls.github.io/jeopardy-lm/" target="_blank" rel="noopener">
+            <span class="card__eyebrow">Zach</span>
+            <span class="card__title">Jeopardy-LM</span>
+            <span class="card__desc">Jeopardy! emulator with API support for LLM-generated categories, cards, and clues.</span>
+            <span class="card__host">zmuhls.github.io/jeopardy-lm</span>
+          </a>
+          <a class="card" href="https://reader.inference-arcade.com/" target="_blank" rel="noopener">
+            <span class="card__eyebrow">Zach</span>
+            <span class="card__title">Cloze Reader</span>
+            <span class="card__desc">Fetches Gutenberg passages and blanks out words in a game-based callback to the cloze deletion test.</span>
+            <span class="card__host">reader.inference-arcade.com</span>
+          </a>
+          <a class="card" href="https://github.com/szweibel/haggle" target="_blank" rel="noopener">
+            <span class="card__eyebrow">Steve</span>
+            <span class="card__title">haggle</span>
+            <span class="card__desc">Stephen Zweibel's experimental agent project.</span>
+            <span class="card__host">github.com/szweibel/haggle</span>
+          </a>
+          <a class="card" href="https://github.com/szweibel/library-agent" target="_blank" rel="noopener">
+            <span class="card__eyebrow">Steve</span>
+            <span class="card__title">library-agent</span>
+            <span class="card__desc">AI research assistant for library collection development.</span>
+            <span class="card__host">github.com/szweibel/library-agent</span>
+          </a>
+          <a class="card" href="https://github.com/szweibel/obsidian-agent-plugin" target="_blank" rel="noopener">
+            <span class="card__eyebrow">Steve</span>
+            <span class="card__title">obsidian-agent-plugin</span>
+            <span class="card__desc">AI agent powered by the Claude Agent SDK for organizing and searching Obsidian vaults.</span>
+            <span class="card__host">github.com/szweibel/obsidian-agent-plugin</span>
+          </a>
+          <a class="card" href="https://github.com/szweibel/site-agent" target="_blank" rel="noopener">
+            <span class="card__eyebrow">Steve</span>
+            <span class="card__title">site-agent</span>
+            <span class="card__desc">Turn any website or domain into a Claude-powered Q&amp;A agent.</span>
+            <span class="card__host">github.com/szweibel/site-agent</span>
+          </a>
+          <a class="card" href="https://github.com/smorello87/zotero-autofill" target="_blank" rel="noopener">
+            <span class="card__eyebrow">Stefano</span>
+            <span class="card__title">zotero-autofill</span>
+            <span class="card__desc">Zotero 7 plugin that auto-fills missing metadata using LLMs plus Open Library and Google Books.</span>
+            <span class="card__host">github.com/smorello87/zotero-autofill</span>
+          </a>
+          <a class="card" href="https://github.com/smorello87/NML-transcription-MacOS" target="_blank" rel="noopener">
+            <span class="card__eyebrow">Stefano</span>
+            <span class="card__title">NML Transcription · macOS</span>
+            <span class="card__desc">Audio transcription tool built for New Media Lab workflows on macOS.</span>
+            <span class="card__host">github.com/smorello87/NML-transcription-MacOS</span>
+          </a>
+          <a class="card" href="https://github.com/smorello87/punk-archiving-toolkit" target="_blank" rel="noopener">
+            <span class="card__eyebrow">Stefano</span>
+            <span class="card__title">Punk Archiving Toolkit</span>
+            <span class="card__desc">An open framework of guides, templates, and tools for building subcultural and community digital archives.</span>
+            <span class="card__host">github.com/smorello87/punk-archiving-toolkit</span>
+          </a>
         </div>
       </details>
 
@@ -636,7 +711,9 @@
         <span>CUNY AI Lab</span><span>·</span>
         <span>The Graduate Center, City University of New York</span><span>·</span>
         <a href="mailto:ailab@gc.cuny.edu">ailab@gc.cuny.edu</a><span>·</span>
-        <a href="https://ailab.gc.cuny.edu/" target="_blank" rel="noopener">ailab.gc.cuny.edu</a>
+        <a href="https://ailab.gc.cuny.edu/" target="_blank" rel="noopener">ailab.gc.cuny.edu</a><span>·</span>
+        <a href="https://github.com/CUNY-AI-Lab" target="_blank" rel="noopener">github.com/CUNY-AI-Lab</a><span>·</span>
+        <a href="https://huggingface.co/CUNYGradCenter" target="_blank" rel="noopener">huggingface.co/CUNYGradCenter</a>
       </p>
     </footer>
 

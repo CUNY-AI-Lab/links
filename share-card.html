@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CUNY AI Lab — share card</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body { width: 1200px; height: 630px; }
+
+    body {
+      background: #0a0a0a;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+      background-size: 60px 60px;
+      color: #f6f5f1;
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: geometricPrecision;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Soft amber glow, top-right */
+    .glow-a {
+      position: absolute;
+      width: 900px; height: 900px;
+      top: -340px; right: -260px;
+      background: radial-gradient(circle, rgba(232,201,122,0.18), rgba(232,201,122,0) 65%);
+      pointer-events: none;
+    }
+    /* Cool counter-glow, bottom-left */
+    .glow-b {
+      position: absolute;
+      width: 700px; height: 700px;
+      bottom: -300px; left: -240px;
+      background: radial-gradient(circle, rgba(120,170,210,0.10), rgba(0,0,0,0) 65%);
+      pointer-events: none;
+    }
+
+    /* Hairline frame inset from the edge */
+    .border {
+      position: absolute;
+      inset: 36px;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      pointer-events: none;
+    }
+    .corner { position: absolute; width: 20px; height: 20px; border: 1px solid rgba(232,201,122,0.55); }
+    .corner.tl { top: -1px; left: -1px; border-right: 0; border-bottom: 0; }
+    .corner.tr { top: -1px; right: -1px; border-left: 0; border-bottom: 0; }
+    .corner.bl { bottom: -1px; left: -1px; border-right: 0; border-top: 0; }
+    .corner.br { bottom: -1px; right: -1px; border-left: 0; border-top: 0; }
+
+    .frame {
+      position: absolute;
+      inset: 76px;
+      padding: 8px 12px 8px 12px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .eyebrow {
+      display: flex; align-items: center; gap: 16px;
+      font-size: 17px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(246,245,241,0.62);
+      font-weight: 500;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 40px; height: 1px;
+      background: rgba(246,245,241,0.42);
+    }
+    .eyebrow b { color: #e8c97a; font-weight: 500; }
+
+    .stack {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 26px;
+      margin: 16px 0;
+    }
+
+    .title {
+      font-size: 130px;
+      font-weight: 600;
+      letter-spacing: -0.04em;
+      line-height: 0.94;
+    }
+    .title em {
+      font-style: normal;
+      color: #e8c97a;
+      font-weight: 500;
+      letter-spacing: -0.03em;
+    }
+
+    .rule { width: 96px; height: 2px; background: #e8c97a; opacity: 0.9; }
+
+    .meta {
+      font-size: 30px;
+      font-weight: 500;
+      color: rgba(246,245,241,0.84);
+      letter-spacing: -0.012em;
+      line-height: 1.32;
+      max-width: 1020px;
+    }
+    .meta span { color: #e8c97a; padding: 0 4px; }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 24px;
+    }
+    .socials {
+      display: flex; gap: 18px; align-items: center;
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 16px;
+      color: rgba(246,245,241,0.58);
+      letter-spacing: 0.02em;
+    }
+    .socials .dot { color: rgba(246,245,241,0.3); }
+    .url {
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 22px;
+      color: rgba(246,245,241,0.7);
+      letter-spacing: 0.02em;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .url::before {
+      content: "";
+      width: 6px; height: 6px; border-radius: 999px;
+      background: #e8c97a;
+      box-shadow: 0 0 12px rgba(232,201,122,0.7);
+    }
+  </style>
+</head>
+<body>
+  <div class="glow-a"></div>
+  <div class="glow-b"></div>
+  <div class="border">
+    <span class="corner tl"></span>
+    <span class="corner tr"></span>
+    <span class="corner bl"></span>
+    <span class="corner br"></span>
+  </div>
+  <div class="frame">
+    <div class="eyebrow">Graduate Center <b>·</b> City University of New York</div>
+    <div class="stack">
+      <h1 class="title">CUNY AI Lab <em>· links</em></h1>
+      <div class="rule"></div>
+      <p class="meta">Programs <span>·</span> Tools <span>·</span> Workshops <span>·</span> Hugging Face <span>·</span> Presentations</p>
+    </div>
+    <div class="footer">
+      <div class="socials">
+        <span>@cunyailab</span><span class="dot">/</span>
+        <span>/cuny-ai-lab</span><span class="dot">/</span>
+        <span>ailab@gc.cuny.edu</span>
+      </div>
+      <div class="url">cuny-ai-lab.github.io/links</div>
+    </div>
+  </div>
+</body>
+</html>
