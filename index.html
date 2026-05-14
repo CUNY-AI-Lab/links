@@ -3,152 +3,643 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CUNY AI Linktree</title>
-  <meta name="description" content="Quick links to CUNY AI initiatives: Teach@CUNY AI Toolkit, Critical AI Literacy Institute, and CUNY AI Lab.">
-  <meta property="og:title" content="CUNY AI Linktree">
-  <meta property="og:description" content="Quick links to CUNY AI initiatives: Teach@CUNY AI Toolkit, Critical AI Literacy Institute, and CUNY AI Lab.">
-  <meta property="og:image" content="tlc-logo.png">
+  <meta name="theme-color" content="#0a0a0a">
+  <title>CUNY AI Lab — Links</title>
+  <meta name="description" content="The CUNY AI Lab link library: socials, main site, the sandbox, hosted tools, workshops, documentation, presentations, and open-source projects from the Graduate Center, CUNY.">
+  <meta property="og:title" content="CUNY AI Lab — Links">
+  <meta property="og:description" content="Socials, the sandbox, hosted tools, workshops, documentation, presentations, and open-source projects from the CUNY AI Lab.">
+  <meta property="og:image" content="logo.png">
   <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="CUNY AI Linktree">
-  <meta name="twitter:description" content="Quick links to CUNY AI initiatives: Teach@CUNY AI Toolkit, Critical AI Literacy Institute, and CUNY AI Lab.">
-  <link rel="icon" type="image/png" href="tlc-logo.png">
+  <meta property="og:url" content="https://cuny-ai-lab.github.io/links/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CUNY AI Lab — Links">
+  <meta name="twitter:description" content="Socials, the sandbox, hosted tools, workshops, documentation, presentations, and open-source projects from the CUNY AI Lab.">
+  <link rel="icon" type="image/png" href="logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0a0a;
+      --ink: #f6f5f1;
+      --ink-mute: rgba(246, 245, 241, 0.62);
+      --ink-faint: rgba(246, 245, 241, 0.38);
+      --line: rgba(255, 255, 255, 0.08);
+      --line-strong: rgba(255, 255, 255, 0.18);
+      --accent: #e8c97a;
+      --accent-soft: rgba(232, 201, 122, 0.12);
+      --grid: rgba(255, 255, 255, 0.035);
+      --radius: 10px;
+      --pad-x: clamp(20px, 4vw, 56px);
+      --pad-y: clamp(36px, 5vw, 80px);
     }
+
+    html { scroll-behavior: smooth; }
 
     body {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Inter', sans-serif;
-      background-color: #0a0a0a;
+      background-color: var(--bg);
       background-image:
-        linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+        linear-gradient(var(--grid) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid) 1px, transparent 1px);
       background-size: 48px 48px;
-      color: #fff;
+      color: var(--ink);
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
 
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(12px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+    a { color: inherit; }
 
-    .container {
+    .shell {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: var(--pad-y) var(--pad-x);
       display: flex;
       flex-direction: column;
-      align-items: center;
-      gap: 20px;
-      padding: 40px 24px;
-      width: 100%;
-      max-width: 480px;
+      gap: clamp(28px, 4vw, 52px);
     }
 
-    h1 {
-      font-size: 1.6rem;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      color: rgba(255, 255, 255, 0.85);
-      margin-bottom: 8px;
-      animation: fadeUp 0.5s ease both;
+    /* Hero */
+    .hero { display: flex; flex-direction: column; gap: 18px; animation: rise .6s ease both; }
+    .hero__mark {
+      display: inline-flex; align-items: center; gap: 12px;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      font-size: 0.7rem; color: var(--ink-mute); font-weight: 500;
+    }
+    .hero__mark::before { content: ""; width: 28px; height: 1px; background: var(--ink-faint); }
+    .hero__logo { width: clamp(200px, 28vw, 320px); height: auto; margin: 4px 0 2px; }
+    .hero__title {
+      font-size: clamp(2.2rem, 5.5vw, 3.8rem);
+      font-weight: 600; letter-spacing: -0.028em; line-height: 1.04;
+    }
+    .hero__title em { font-style: normal; color: var(--accent); font-weight: 500; }
+    .hero__lede {
+      max-width: 64ch; color: var(--ink-mute);
+      font-size: clamp(1rem, 1.3vw, 1.1rem); line-height: 1.55;
     }
 
-    .links {
-      display: flex;
-      flex-direction: column;
-      align-items: stretch;
-      gap: 14px;
-      width: 100%;
+    /* Socials row — top of page, always visible */
+    .socials {
+      display: flex; flex-wrap: wrap; gap: 8px;
+      padding-top: 6px;
     }
-
-    .links a {
-      display: block;
-      padding: 14px 32px;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 6px;
-      color: #fff;
+    .pill {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 9px 16px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
       text-decoration: none;
-      text-align: center;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.95rem;
-      font-weight: 500;
-      letter-spacing: 0.01em;
-      transition: background 0.2s, border-color 0.2s, transform 0.2s, box-shadow 0.2s;
-      animation: fadeUp 0.5s ease both;
+      font-size: 0.86rem;
+      transition: border-color .18s, background .18s, color .18s, transform .18s;
     }
+    .pill svg { width: 14px; height: 14px; flex: none; opacity: .9; }
+    .pill:hover { border-color: var(--accent); background: var(--accent-soft); color: var(--ink); transform: translateY(-1px); }
+    .pill__handle { color: var(--ink-faint); font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 0.78rem; }
+    .pill:hover .pill__handle { color: var(--ink-mute); }
 
-    .links a:nth-child(1) { animation-delay: 0.1s; }
-    .links a:nth-child(2) { animation-delay: 0.2s; }
-    .links a:nth-child(3) { animation-delay: 0.3s; }
-
-    .links a:hover {
-      background: rgba(255, 255, 255, 0.07);
-      border-color: rgba(255, 255, 255, 0.16);
+    /* Primary destinations — main site + subdomains + org */
+    .primary {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 12px;
+    }
+    .primary a {
+      display: flex; flex-direction: column; gap: 6px;
+      padding: 20px 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,0.028), rgba(255,255,255,0.004));
+      text-decoration: none;
+      transition: border-color .2s, transform .2s, background .2s, box-shadow .2s;
+      position: relative;
+    }
+    .primary a:hover {
+      border-color: var(--accent);
       transform: translateY(-2px);
-      box-shadow: 0 4px 20px rgba(255, 255, 255, 0.06);
+      box-shadow: 0 8px 30px rgba(232, 201, 122, 0.08);
+    }
+    .primary__host {
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 0.72rem; letter-spacing: 0.02em; color: var(--ink-faint);
+    }
+    .primary__title { font-size: 1.08rem; font-weight: 600; letter-spacing: -0.01em; }
+    .primary__title::after { content: " ↗"; color: var(--ink-faint); font-weight: 400; }
+    .primary a:hover .primary__title::after { color: var(--accent); }
+    .primary__desc { font-size: 0.88rem; color: var(--ink-mute); }
+
+    /* Sections (progressive disclosure) */
+    .section {
+      border-top: 1px solid var(--line);
+      padding-top: clamp(26px, 3.5vw, 36px);
+      scroll-margin-top: 24px;
+    }
+    .section > summary {
+      list-style: none;
+      cursor: pointer;
+      display: flex; align-items: baseline; justify-content: space-between; gap: 16px;
+      padding: 2px 0 20px;
+      user-select: none;
+      transition: color .2s;
+    }
+    .section > summary::-webkit-details-marker { display: none; }
+    .section__title {
+      display: flex; align-items: baseline; gap: 14px;
+      font-size: clamp(1.3rem, 2.2vw, 1.6rem);
+      font-weight: 600; letter-spacing: -0.018em;
+    }
+    .section__count {
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 0.76rem; color: var(--ink-faint); font-weight: 400; letter-spacing: 0.04em;
+    }
+    .section__hint {
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 0.76rem; color: var(--ink-mute); letter-spacing: 0.05em;
+      transition: color .2s;
+    }
+    .section > summary:hover .section__hint,
+    .section[open] > summary .section__hint { color: var(--accent); }
+    .section:not([open]) .section__hint::before { content: "expand +"; }
+    .section[open] .section__hint::before { content: "collapse −"; }
+
+    .section__intro {
+      max-width: 70ch;
+      color: var(--ink-mute);
+      font-size: 0.94rem;
+      margin: -8px 0 18px;
     }
 
-    .links a:active {
-      transform: translateY(0);
-      box-shadow: none;
+    /* Card grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 12px;
+    }
+    .card {
+      display: flex; flex-direction: column; gap: 6px;
+      padding: 18px 20px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,0.018);
+      text-decoration: none; color: inherit;
+      transition: border-color .18s, background .18s, transform .18s;
+    }
+    .card:hover { border-color: var(--line-strong); background: rgba(255,255,255,0.04); transform: translateY(-1px); }
+    .card__eyebrow {
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 0.7rem; color: var(--ink-faint); letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .card__title { font-size: 1rem; font-weight: 600; letter-spacing: -0.005em; }
+    .card__title::after { content: " ↗"; color: var(--ink-faint); font-weight: 400; opacity: .7; }
+    .card:hover .card__title::after { color: var(--accent); opacity: 1; }
+    .card__desc { font-size: 0.86rem; color: var(--ink-mute); line-height: 1.5; }
+    .card__host {
+      margin-top: 6px; padding-top: 8px;
+      border-top: 1px dashed var(--line);
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 0.7rem; color: var(--ink-faint); letter-spacing: 0.02em;
+      word-break: break-word;
     }
 
-    .divider {
-      width: 48px;
-      height: 1px;
-      background: rgba(255, 255, 255, 0.1);
-      margin-top: 8px;
+    /* Subgroups within a section (more elaborate, deeper down) */
+    .subgroup { display: flex; flex-direction: column; gap: 10px; }
+    .subgroup + .subgroup { margin-top: 24px; padding-top: 22px; border-top: 1px dashed var(--line); }
+    .subgroup__label {
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 0.76rem; color: var(--ink-mute);
+      text-transform: uppercase; letter-spacing: 0.08em;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .subgroup__label::after {
+      content: ""; flex: 1; height: 1px; background: var(--line);
     }
 
-    .footer-logos {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 32px;
-      animation: fadeUp 0.5s ease 0.4s both;
+    /* Dense rows (for Open source index) */
+    .rows {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--line);
     }
-
-    .footer-logos img {
-      height: auto;
+    .row {
+      display: flex; flex-direction: column; gap: 3px;
+      padding: 13px 18px;
+      background: var(--bg);
+      text-decoration: none; color: inherit;
+      transition: background .14s;
     }
-
-    .footer-logos .logo-lg {
-      width: 200px;
+    .row:hover { background: rgba(255,255,255,0.045); }
+    .row__name {
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 0.84rem; font-weight: 500;
     }
+    .row__name::after { content: " →"; color: var(--ink-faint); }
+    .row:hover .row__name::after { color: var(--accent); }
+    .row__desc { font-size: 0.78rem; color: var(--ink-mute); line-height: 1.4; }
 
-    .footer-logos .logo {
-      width: 140px;
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--line);
+      padding-top: clamp(26px, 3vw, 36px);
+      display: flex; flex-direction: column; gap: 14px;
+    }
+    .colophon {
+      font-size: 0.8rem; color: var(--ink-faint);
+      display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: baseline;
+    }
+    .colophon a { color: var(--ink-mute); text-decoration: none; border-bottom: 1px solid var(--line); }
+    .colophon a:hover { color: var(--accent); border-color: var(--accent); }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .section { animation: rise .5s ease both; }
+    .section:nth-of-type(1) { animation-delay: .05s; }
+    .section:nth-of-type(2) { animation-delay: .1s; }
+    .section:nth-of-type(3) { animation-delay: .15s; }
+    .section:nth-of-type(4) { animation-delay: .2s; }
+    .section:nth-of-type(5) { animation-delay: .25s; }
+    footer { animation: rise .5s .3s ease both; }
+
+    @media (max-width: 560px) {
+      .pill { padding: 8px 14px; font-size: 0.82rem; }
+      .pill__handle { display: none; }
+      .primary a { padding: 18px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero, .section, footer { animation: none; }
+      .primary a:hover, .card:hover, .row:hover, .pill:hover { transform: none; }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>CUNY AI Linktree</h1>
-    <div class="links">
-      <a href="https://ailab.gc.cuny.edu/" target="_blank" rel="noopener">CUNY AI Lab</a>
-      <a href="https://aitoolkit.commons.gc.cuny.edu/" target="_blank" rel="noopener">Teach@CUNY AI Toolkit</a>
-      <a href="https://criticalai.commons.gc.cuny.edu/" target="_blank" rel="noopener">Critical AI Literacy Institute</a>
-    </div>
-    <div class="divider"></div>
-    <div class="footer-logos">
-      <img src="logo.png" alt="CUNY AI Lab" class="logo-lg">
-      <img src="tlc-logo.png" alt="Teaching and Learning Center" class="logo">
-    </div>
+  <div class="shell">
+
+    <header class="hero">
+      <div class="hero__mark">Graduate Center · City University of New York</div>
+      <img src="logo.png" alt="CUNY AI Lab" class="hero__logo">
+      <h1 class="hero__title">CUNY AI Lab <em>· links</em></h1>
+      <p class="hero__lede">A library of everything we publish — our socials, the sandbox, hosted tools, workshops, documentation, presentations, and open-source projects.</p>
+
+      <nav class="socials" aria-label="Social and contact">
+        <a class="pill" href="https://www.linkedin.com/company/cuny-ai-lab/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5V9h3v10zM6.5 7.5A1.75 1.75 0 118.25 5.75 1.76 1.76 0 016.5 7.5zM19 19h-3v-5c0-1.2-.4-2-1.5-2A1.6 1.6 0 0013 13.7V19h-3V9h3v1.3a3.4 3.4 0 013-1.3c2.2 0 3 1.4 3 3.6V19z"/></svg>
+          LinkedIn <span class="pill__handle">/cuny-ai-lab</span>
+        </a>
+        <a class="pill" href="https://www.instagram.com/cunyailab/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".9" fill="currentColor" stroke="none"/></svg>
+          Instagram <span class="pill__handle">@cunyailab</span>
+        </a>
+        <a class="pill" href="https://bsky.app/profile/cunyailab.bsky.social" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 10.7C10.4 7.5 7 4.1 4.2 3.4 1.8 2.9 1 4 1 5.3 1 6.6 1.8 13 2.2 14.3c1.4 4 5.4 4.5 9.8 4.5-4.4 0-8.4.5-9.8 4.5 4 0 8.6.4 11.8-4.6 3.2 5 7.8 4.6 11.8 4.6-1.4-4-5.4-4.5-9.8-4.5 4.4 0 8.4-.5 9.8-4.5.4-1.3 1.2-7.7 1.2-9 0-1.3-.8-2.4-3.2-1.9-2.8.7-6.2 4.1-7.8 7.3z"/></svg>
+          Bluesky <span class="pill__handle">@cunyailab</span>
+        </a>
+        <a class="pill" href="https://github.com/CUNY-AI-Lab" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-3.2 19.5c.5.1.7-.2.7-.5v-1.8c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.4 1.1 3 .8.1-.7.4-1.1.6-1.4-2.2-.3-4.5-1.1-4.5-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.5 9.5 0 015 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.3 4.7-4.5 5 .4.3.7 1 .7 1.9v2.8c0 .3.2.6.7.5A10 10 0 0012 2z"/></svg>
+          GitHub <span class="pill__handle">/CUNY-AI-Lab</span>
+        </a>
+        <a class="pill" href="mailto:ailab@gc.cuny.edu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          Email <span class="pill__handle">ailab@gc.cuny.edu</span>
+        </a>
+      </nav>
+
+      <nav class="primary" aria-label="Primary destinations">
+        <a href="https://ailab.gc.cuny.edu/" target="_blank" rel="noopener">
+          <span class="primary__host">ailab.gc.cuny.edu</span>
+          <span class="primary__title">Main site</span>
+          <span class="primary__desc">About the lab, people, projects, news.</span>
+        </a>
+        <a href="https://chat.ailab.gc.cuny.edu/" target="_blank" rel="noopener">
+          <span class="primary__host">chat.ailab.gc.cuny.edu</span>
+          <span class="primary__title">Sandbox</span>
+          <span class="primary__desc">Open WebUI chat for educators and researchers.</span>
+        </a>
+        <a href="https://tools.ailab.gc.cuny.edu/" target="_blank" rel="noopener">
+          <span class="primary__host">tools.ailab.gc.cuny.edu</span>
+          <span class="primary__title">Tools</span>
+          <span class="primary__desc">Hosted utilities and lab-built applications.</span>
+        </a>
+        <a href="https://github.com/CUNY-AI-Lab" target="_blank" rel="noopener">
+          <span class="primary__host">github.com/CUNY-AI-Lab</span>
+          <span class="primary__title">GitHub Org</span>
+          <span class="primary__desc">All source code — workshops, tools, prototypes.</span>
+        </a>
+      </nav>
+    </header>
+
+    <main>
+
+      <details class="section" open>
+        <summary>
+          <span class="section__title">Programs <span class="section__count">02</span></span>
+          <span class="section__hint"></span>
+        </summary>
+        <p class="section__intro">CUNY-wide initiatives the lab develops and supports.</p>
+        <div class="grid">
+          <a class="card" href="https://aitoolkit.commons.gc.cuny.edu/" target="_blank" rel="noopener">
+            <span class="card__eyebrow">Teach@CUNY</span>
+            <span class="card__title">Teach@CUNY AI Toolkit</span>
+            <span class="card__desc">Companion to the Teach@CUNY Handbook covering pedagogy with generative AI across the university.</span>
+            <span class="card__host">aitoolkit.commons.gc.cuny.edu</span>
+          </a>
+          <a class="card" href="https://criticalai.commons.gc.cuny.edu/" target="_blank" rel="noopener">
+            <span class="card__eyebrow">CALI</span>
+            <span class="card__title">Critical AI Literacy Institute</span>
+            <span class="card__desc">Institute on critical, classroom-grounded engagement with AI for K–12 and higher-ed educators.</span>
+            <span class="card__host">criticalai.commons.gc.cuny.edu</span>
+          </a>
+        </div>
+      </details>
+
+      <details class="section" open>
+        <summary>
+          <span class="section__title">Tools &amp; platforms <span class="section__count">07</span></span>
+          <span class="section__hint"></span>
+        </summary>
+        <p class="section__intro">Hosted applications and platforms — what we run for the CUNY community.</p>
+
+        <div class="subgroup">
+          <div class="subgroup__label">Hosted</div>
+          <div class="grid">
+            <a class="card" href="https://chat.ailab.gc.cuny.edu/" target="_blank" rel="noopener">
+              <span class="card__eyebrow">Sandbox</span>
+              <span class="card__title">CUNY AI Lab Sandbox</span>
+              <span class="card__desc">Lab-hosted Open WebUI chat interface for educators and researchers across CUNY.</span>
+              <span class="card__host">chat.ailab.gc.cuny.edu</span>
+            </a>
+            <a class="card" href="https://cuny-ai-lab.github.io/sandbox-docs/" target="_blank" rel="noopener">
+              <span class="card__eyebrow">Docs</span>
+              <span class="card__title">Sandbox Documentation</span>
+              <span class="card__desc">Support docs for teachers and researchers using the Sandbox via Open WebUI.</span>
+              <span class="card__host">cuny-ai-lab.github.io/sandbox-docs</span>
+            </a>
+            <a class="card" href="https://tools.ailab.gc.cuny.edu/" target="_blank" rel="noopener">
+              <span class="card__eyebrow">Suite</span>
+              <span class="card__title">Lab Tools Suite</span>
+              <span class="card__desc">Hosted utilities — slide builder, accessibility remediation, OCR, and more.</span>
+              <span class="card__host">tools.ailab.gc.cuny.edu</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="subgroup">
+          <div class="subgroup__label">Applications</div>
+          <div class="grid">
+            <a class="card" href="https://github.com/CUNY-AI-Lab/slide-maker" target="_blank" rel="noopener">
+              <span class="card__eyebrow">Authoring</span>
+              <span class="card__title">Slide Maker</span>
+              <span class="card__desc">Plug-and-play slide builder with agentic chat, resource templates, and onscreen editing.</span>
+              <span class="card__host">github.com/CUNY-AI-Lab/slide-maker</span>
+            </a>
+            <a class="card" href="https://github.com/CUNY-AI-Lab/marginalia" target="_blank" rel="noopener">
+              <span class="card__eyebrow">Reading</span>
+              <span class="card__title">Marginalia</span>
+              <span class="card__desc">A reading assistant that turns documents into conversational agents.</span>
+              <span class="card__host">github.com/CUNY-AI-Lab/marginalia</span>
+            </a>
+            <a class="card" href="https://github.com/CUNY-AI-Lab/manifold-companion" target="_blank" rel="noopener">
+              <span class="card__eyebrow">Archives</span>
+              <span class="card__title">Manifold Companion</span>
+              <span class="card__desc">Multi-user OCR platform for manuscript digitization — Express, React, AWS Bedrock.</span>
+              <span class="card__host">github.com/CUNY-AI-Lab/manifold-companion</span>
+            </a>
+            <a class="card" href="https://github.com/CUNY-AI-Lab/pdf-accessibility-app" target="_blank" rel="noopener">
+              <span class="card__eyebrow">Accessibility</span>
+              <span class="card__title">PDF Accessibility</span>
+              <span class="card__desc">Execution-first PDF accessibility remediation app, with an AWS Bedrock backend.</span>
+              <span class="card__host">github.com/CUNY-AI-Lab/pdf-accessibility-app</span>
+            </a>
+            <a class="card" href="https://github.com/CUNY-AI-Lab/a11y-check" target="_blank" rel="noopener">
+              <span class="card__eyebrow">Accessibility</span>
+              <span class="card__title">A11y Check</span>
+              <span class="card__desc">PDF accessibility and formatting checker — built for dissertation workflows.</span>
+              <span class="card__host">github.com/CUNY-AI-Lab/a11y-check</span>
+            </a>
+            <a class="card" href="https://github.com/CUNY-AI-Lab/OWU-carbon-emission" target="_blank" rel="noopener">
+              <span class="card__eyebrow">Sustainability</span>
+              <span class="card__title">OWU Carbon Emission</span>
+              <span class="card__desc">Open WebUI filter that estimates energy use and CO₂ emissions for remote LLM calls.</span>
+              <span class="card__host">github.com/CUNY-AI-Lab/OWU-carbon-emission</span>
+            </a>
+          </div>
+        </div>
+      </details>
+
+      <details class="section" open>
+        <summary>
+          <span class="section__title">Workshops &amp; documentation <span class="section__count">08</span></span>
+          <span class="section__hint"></span>
+        </summary>
+        <p class="section__intro">Teaching materials and how-to guides we run with CUNY faculty and ITP fellows.</p>
+
+        <div class="subgroup">
+          <div class="subgroup__label">Sandbox · Open WebUI</div>
+          <div class="grid">
+            <a class="card" href="https://cuny-ai-lab.github.io/system-prompting/" target="_blank" rel="noopener">
+              <span class="card__eyebrow">Workshop 1</span>
+              <span class="card__title">Composing System Prompts</span>
+              <span class="card__desc">Writing effective system prompts for Open WebUI models in the Sandbox.</span>
+              <span class="card__host">cuny-ai-lab.github.io/system-prompting</span>
+            </a>
+            <a class="card" href="https://cuny-ai-lab.github.io/knowledge-collections/" target="_blank" rel="noopener">
+              <span class="card__eyebrow">Workshop 2</span>
+              <span class="card__title">Curating Knowledge Collections</span>
+              <span class="card__desc">Building and curating knowledge collections in the CUNY AI Lab Sandbox.</span>
+              <span class="card__host">cuny-ai-lab.github.io/knowledge-collections</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="subgroup">
+          <div class="subgroup__label">ITP Lab — Critical &amp; creative practice</div>
+          <div class="grid">
+            <a class="card" href="https://cuny-ai-lab.github.io/critical-play/" target="_blank" rel="noopener">
+              <span class="card__eyebrow">ITP Lab</span>
+              <span class="card__title">Critical Play with LLMs</span>
+              <span class="card__desc">Workshop slides on playful, critical engagement with large language models.</span>
+              <span class="card__host">cuny-ai-lab.github.io/critical-play</span>
+            </a>
+            <a class="card" href="https://cuny-ai-lab.github.io/creative-coding/" target="_blank" rel="noopener">
+              <span class="card__eyebrow">ITP Lab</span>
+              <span class="card__title">Creative Coding with Generative AI</span>
+              <span class="card__desc">Hands-on creative coding session, led by Zach Muhlbauer &amp; Stefano Morello.</span>
+              <span class="card__host">cuny-ai-lab.github.io/creative-coding</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="subgroup">
+          <div class="subgroup__label">Vibe coding &amp; gen dev</div>
+          <div class="grid">
+            <a class="card" href="https://cuny-ai-lab.github.io/vibe-coding-how-to/" target="_blank" rel="noopener">
+              <span class="card__eyebrow">Guide</span>
+              <span class="card__title">Vibe Coding How-To</span>
+              <span class="card__desc">Operational instructions for AI-assisted development with Gemini CLI.</span>
+              <span class="card__host">cuny-ai-lab.github.io/vibe-coding-how-to</span>
+            </a>
+            <a class="card" href="https://cuny-ai-lab.github.io/Vibe-Coding-Workshop/" target="_blank" rel="noopener">
+              <span class="card__eyebrow">Workshop</span>
+              <span class="card__title">Vibe Coding Workshop</span>
+              <span class="card__desc">Live workshop materials — pair-program with an LLM, ship in an afternoon.</span>
+              <span class="card__host">cuny-ai-lab.github.io/Vibe-Coding-Workshop</span>
+            </a>
+            <a class="card" href="https://cuny-ai-lab.github.io/vibe-coding-prototypes/" target="_blank" rel="noopener">
+              <span class="card__eyebrow">Showcase</span>
+              <span class="card__title">Vibe Coding Prototypes</span>
+              <span class="card__desc">A showcase of prototypes produced during vibe coding sessions.</span>
+              <span class="card__host">cuny-ai-lab.github.io/vibe-coding-prototypes</span>
+            </a>
+            <a class="card" href="https://cuny-ai-lab.github.io/gen-dev-foundations/" target="_blank" rel="noopener">
+              <span class="card__eyebrow">Foundations</span>
+              <span class="card__title">Gen Dev Foundations</span>
+              <span class="card__desc">Foundational concepts for generative development practice.</span>
+              <span class="card__host">cuny-ai-lab.github.io/gen-dev-foundations</span>
+            </a>
+          </div>
+        </div>
+      </details>
+
+      <details class="section">
+        <summary>
+          <span class="section__title">Presentations <span class="section__count">02</span></span>
+          <span class="section__hint"></span>
+        </summary>
+        <p class="section__intro">Conference and campus talks given by the lab.</p>
+        <div class="grid">
+          <a class="card" href="https://cuny-ai-lab.github.io/cali-narst/" target="_blank" rel="noopener">
+            <span class="card__eyebrow">NARST 2026</span>
+            <span class="card__title">CALI · NARST 2026</span>
+            <span class="card__desc">Critical AI Literacy Institute deck presented at NARST 2026.</span>
+            <span class="card__host">cuny-ai-lab.github.io/cali-narst</span>
+          </a>
+          <a class="card" href="https://cuny-ai-lab.github.io/cali-brooklyn/" target="_blank" rel="noopener">
+            <span class="card__eyebrow">Brooklyn College</span>
+            <span class="card__title">CALI · Brooklyn College</span>
+            <span class="card__desc">Critical AI Literacy Institute campus presentation, Brooklyn College.</span>
+            <span class="card__host">cuny-ai-lab.github.io/cali-brooklyn</span>
+          </a>
+        </div>
+      </details>
+
+      <details class="section">
+        <summary>
+          <span class="section__title">Open-source index <span class="section__count">14</span></span>
+          <span class="section__hint"></span>
+        </summary>
+        <p class="section__intro">A flat index of public repositories under the <a href="https://github.com/CUNY-AI-Lab" style="color: var(--ink); border-bottom: 1px solid var(--line);">CUNY-AI-Lab</a> organization.</p>
+
+        <div class="subgroup">
+          <div class="subgroup__label">Web · sites &amp; deploy</div>
+          <div class="rows">
+            <a class="row" href="https://github.com/CUNY-AI-Lab/CUNY-AI-Lab-website" target="_blank" rel="noopener">
+              <span class="row__name">CUNY-AI-Lab-website</span>
+              <span class="row__desc">Source for ailab.gc.cuny.edu.</span>
+            </a>
+            <a class="row" href="https://github.com/CUNY-AI-Lab/cail-deploy" target="_blank" rel="noopener">
+              <span class="row__name">cail-deploy</span>
+              <span class="row__desc">Kale Deploy control plane, Cloudflare Workers stack, agent integrations.</span>
+            </a>
+            <a class="row" href="https://github.com/CUNY-AI-Lab/site-studio" target="_blank" rel="noopener">
+              <span class="row__name">site-studio</span>
+              <span class="row__desc">AI-assisted site builder.</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="subgroup">
+          <div class="subgroup__label">Apps · authoring &amp; reading</div>
+          <div class="rows">
+            <a class="row" href="https://github.com/CUNY-AI-Lab/slide-maker" target="_blank" rel="noopener">
+              <span class="row__name">slide-maker</span>
+              <span class="row__desc">Plug-and-play slide builder with agentic chat and onscreen editing.</span>
+            </a>
+            <a class="row" href="https://github.com/CUNY-AI-Lab/marginalia" target="_blank" rel="noopener">
+              <span class="row__name">marginalia</span>
+              <span class="row__desc">Reading assistant — documents into conversational agents.</span>
+            </a>
+            <a class="row" href="https://github.com/CUNY-AI-Lab/manifold-companion" target="_blank" rel="noopener">
+              <span class="row__name">manifold-companion</span>
+              <span class="row__desc">Multi-user OCR for manuscript digitization (Express + React + AWS Bedrock).</span>
+            </a>
+            <a class="row" href="https://github.com/CUNY-AI-Lab/agent-studio" target="_blank" rel="noopener">
+              <span class="row__name">agent-studio</span>
+              <span class="row__desc">Agent workflow builder.</span>
+            </a>
+            <a class="row" href="https://github.com/CUNY-AI-Lab/skills-tools" target="_blank" rel="noopener">
+              <span class="row__name">skills-tools</span>
+              <span class="row__desc">Skills and tooling for agentic workflows.</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="subgroup">
+          <div class="subgroup__label">Accessibility</div>
+          <div class="rows">
+            <a class="row" href="https://github.com/CUNY-AI-Lab/pdf-accessibility-app" target="_blank" rel="noopener">
+              <span class="row__name">pdf-accessibility-app</span>
+              <span class="row__desc">Execution-first PDF accessibility remediation app.</span>
+            </a>
+            <a class="row" href="https://github.com/CUNY-AI-Lab/pdf-accessibility" target="_blank" rel="noopener">
+              <span class="row__name">pdf-accessibility</span>
+              <span class="row__desc">AWS-based PDF remediation with Bedrock vision models (WCAG 2.1 AA).</span>
+            </a>
+            <a class="row" href="https://github.com/CUNY-AI-Lab/a11y-check" target="_blank" rel="noopener">
+              <span class="row__name">a11y-check</span>
+              <span class="row__desc">PDF accessibility checker for dissertations.</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="subgroup">
+          <div class="subgroup__label">Infrastructure · inference &amp; sustainability</div>
+          <div class="rows">
+            <a class="row" href="https://github.com/CUNY-AI-Lab/OWU-carbon-emission" target="_blank" rel="noopener">
+              <span class="row__name">OWU-carbon-emission</span>
+              <span class="row__desc">Open WebUI filter that estimates energy use and CO₂ for LLM API calls.</span>
+            </a>
+            <a class="row" href="https://github.com/CUNY-AI-Lab/inference-knobs" target="_blank" rel="noopener">
+              <span class="row__name">inference-knobs</span>
+              <span class="row__desc">Inference parameter exploration.</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="subgroup">
+          <div class="subgroup__label">Workshops &amp; teaching</div>
+          <div class="rows">
+            <a class="row" href="https://github.com/CUNY-AI-Lab/workshops" target="_blank" rel="noopener">
+              <span class="row__name">workshops</span>
+              <span class="row__desc">Umbrella repo — workshops introducing educators to teaching with gen AI.</span>
+            </a>
+            <a class="row" href="https://github.com/CUNY-AI-Lab" target="_blank" rel="noopener">
+              <span class="row__name">→ browse all repositories</span>
+              <span class="row__desc">See the full CUNY-AI-Lab GitHub organization.</span>
+            </a>
+          </div>
+        </div>
+      </details>
+
+    </main>
+
+    <footer>
+      <p class="colophon">
+        <span>CUNY AI Lab</span><span>·</span>
+        <span>The Graduate Center, City University of New York</span><span>·</span>
+        <a href="mailto:ailab@gc.cuny.edu">ailab@gc.cuny.edu</a><span>·</span>
+        <a href="https://ailab.gc.cuny.edu/" target="_blank" rel="noopener">ailab.gc.cuny.edu</a>
+      </p>
+    </footer>
+
   </div>
 </body>
 </html>
