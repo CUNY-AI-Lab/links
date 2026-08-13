@@ -200,6 +200,17 @@
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 12px;
     }
+    .workshop-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .workshop-row {
+      display: grid;
+      gap: 12px;
+    }
+    .workshop-row--two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .workshop-row--three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
     .card {
       display: flex; flex-direction: column; gap: 6px;
       padding: 18px 20px;
@@ -226,6 +237,12 @@
       font-size: 0.7rem; color: var(--ink-faint); letter-spacing: 0.02em;
       word-break: break-word;
     }
+    .workshop-card--lead {
+      border-color: rgba(232, 201, 122, 0.32);
+      background: linear-gradient(180deg, rgba(232, 201, 122, 0.055), rgba(255,255,255,0.014));
+    }
+    .workshop-card--lead .card__eyebrow { color: var(--accent); }
+    .workshop-card .card__desc { flex: 1; }
 
     /* Footer */
     footer {
@@ -255,6 +272,10 @@
     .section:nth-of-type(8) { animation-delay: .4s; }
     footer { animation: rise .5s .45s ease both; }
 
+    @media (max-width: 760px) {
+      .workshop-row--two,
+      .workshop-row--three { grid-template-columns: 1fr; }
+    }
     @media (max-width: 560px) {
       .pill { padding: 8px 14px; font-size: 0.82rem; }
       .pill__handle { display: none; }
@@ -409,7 +430,7 @@
 
       <details class="section" open>
         <summary>
-          <span class="section__title">Resources <span class="section__count">02</span></span>
+          <span class="section__title">Resources <span class="section__count">03</span></span>
           <span class="section__hint"></span>
         </summary>
         <div class="grid">
@@ -425,92 +446,155 @@
             <span class="card__desc">Support documentation and tutorials for teachers and researchers using the CAIL Sandbox.</span>
             <span class="card__host">cuny-ai-lab.github.io/sandbox-docs</span>
           </a>
+          <a class="card" href="https://cuny-ai-lab.github.io/vibe-coding-how-to/" target="_blank" rel="noopener">
+            <span class="card__eyebrow">Guide</span>
+            <span class="card__title">Vibe Coding How-To</span>
+            <span class="card__desc">Operational instructions for using command-line agents, setting project context, and reviewing AI-assisted development work.</span>
+            <span class="card__host">cuny-ai-lab.github.io/vibe-coding-how-to</span>
+          </a>
         </div>
       </details>
 
       <details class="section" open>
         <summary>
-          <span class="section__title">Workshops <span class="section__count">12</span></span>
+          <span class="section__title">Workshops <span class="section__count">15</span></span>
+          <span class="section__hint"></span>
+        </summary>
+        <p class="section__intro">Hands-on sessions for faculty, staff, and students on AI methods, tools, pedagogy, and critical practice.</p>
+        <div class="workshop-grid">
+          <div class="workshop-row workshop-row--two">
+            <a class="card workshop-card workshop-card--lead" href="https://cuny-ai-lab.github.io/creative-coding/" target="_blank" rel="noopener">
+              <span class="card__eyebrow">Feb 19, 2026 · ITP</span>
+              <span class="card__title">Creative Coding with Generative AI</span>
+              <span class="card__desc">This workshop frames generative art through rules, randomness, and interpretation, drawing on creative-coding histories from Bell Labs to the browser. Participants use the CAIL Sandbox to build and refine portable HTML sketches.</span>
+              <span class="card__host">cuny-ai-lab.github.io/creative-coding</span>
+            </a>
+            <a class="card workshop-card workshop-card--lead" href="https://cuny-ai-lab.github.io/critical-play/" target="_blank" rel="noopener">
+              <span class="card__eyebrow">Oct 16, 2025 · ITP</span>
+              <span class="card__title">Critical Play with Large Language Models</span>
+              <span class="card__desc">Game mechanics and exploratory probes expose model confabulation, sycophancy, reasoning failures, and instruction-following limits. Participants compare models and design classroom activities around AI’s social and material implications.</span>
+              <span class="card__host">cuny-ai-lab.github.io/critical-play</span>
+            </a>
+          </div>
+
+          <div class="workshop-row workshop-row--three">
+            <a class="card workshop-card" href="https://cuny-ai-lab.github.io/system-prompting/" target="_blank" rel="noopener">
+              <span class="card__eyebrow">Mar 16, 2026 · Sandbox series</span>
+              <span class="card__title">Composing System Prompts</span>
+              <span class="card__desc">Participants compose persistent Sandbox instructions for a model’s role, procedure, constraints, tone, and output. Examples across disciplines show how system prompts can scaffold student thinking without replacing it.</span>
+              <span class="card__host">cuny-ai-lab.github.io/system-prompting</span>
+            </a>
+            <a class="card workshop-card" href="https://cuny-ai-lab.github.io/knowledge-collections/" target="_blank" rel="noopener">
+              <span class="card__eyebrow">Mar 23, 2026 · Sandbox series</span>
+              <span class="card__title">Curating Knowledge Collections</span>
+              <span class="card__desc">Participants turn course documents into a private knowledge collection that grounds a custom Sandbox model. They connect document organization to retrieval quality, then test source-specific responses.</span>
+              <span class="card__host">cuny-ai-lab.github.io/knowledge-collections</span>
+            </a>
+            <a class="card workshop-card" href="https://cuny-ai-lab.github.io/skills-tools/" target="_blank" rel="noopener">
+              <span class="card__eyebrow">Mar 30, 2026 · Sandbox series</span>
+              <span class="card__title">Customizing Skills &amp; Tools</span>
+              <span class="card__desc">This workshop distinguishes reusable instructional procedures from executable tools that extend a model. Participants turn one teaching move into a skill, attach it to a custom model, and test it.</span>
+              <span class="card__host">cuny-ai-lab.github.io/skills-tools</span>
+            </a>
+          </div>
+
+          <div class="workshop-row workshop-row--two">
+            <a class="card workshop-card" href="https://cuny-ai-lab.github.io/ai-literacy-basics/" target="_blank" rel="noopener">
+              <span class="card__eyebrow">May 26, 2026 · TLC</span>
+              <span class="card__title">AI Literacy Basics</span>
+              <span class="card__desc">Everyday routines, token games, and model comparisons make algorithmic thinking and language-model prediction concrete. Participants test system prompts in the CAIL Sandbox while examining access, error, bias, and the digital divide.</span>
+              <span class="card__host">cuny-ai-lab.github.io/ai-literacy-basics</span>
+            </a>
+            <a class="card workshop-card" href="https://docs.google.com/presentation/d/19AHGsl4uDr1c3-cnUStxyZ0DrZTXyGMd7MkzYdEiV68/edit?usp=sharing" target="_blank" rel="noopener">
+              <span class="card__eyebrow">Oct 1, 2025 · TLC</span>
+              <span class="card__title">AI Basics &amp; Policy Statements</span>
+              <span class="card__desc">Interactive visualizations and hands-on tinkering demystify generative AI while participants compare classroom policy approaches. They draft syllabus language covering values, attribution, acceptable use, and critical AI literacy.</span>
+              <span class="card__host">docs.google.com/presentation</span>
+            </a>
+          </div>
+
+          <div class="workshop-row workshop-row--three">
+            <a class="card workshop-card" href="https://cuny-ai-lab.github.io/gen-dev-foundations/" target="_blank" rel="noopener">
+              <span class="card__eyebrow">Mar 3, 2026 · New Media Lab</span>
+              <span class="card__title">Foundations: AI, Command Line &amp; Version Control</span>
+              <span class="card__desc">This session explains how language models generate code, where plausible output can fail, and how core development tools fit together. Participants build a version-controlled workflow with VS Code, Git, GitHub, and Gemini CLI.</span>
+              <span class="card__host">cuny-ai-lab.github.io/gen-dev-foundations</span>
+            </a>
+            <a class="card workshop-card" href="https://cuny-ai-lab.github.io/Vibe-Coding-Workshop/" target="_blank" rel="noopener">
+              <span class="card__eyebrow">Nov 18, 2025 · New Media Lab</span>
+              <span class="card__title">Co-Developing with Generative AI</span>
+              <span class="card__desc">Participants use command-line coding agents to move from a plain-language idea to a small website or visualization. They plan in a README, build a scoped prototype, and consider verification, privacy, bias, labor, and limits.</span>
+              <span class="card__host">cuny-ai-lab.github.io/Vibe-Coding-Workshop</span>
+            </a>
+            <a class="card workshop-card" href="https://cuny-ai-lab.github.io/vibe-coding-prototypes/" target="_blank" rel="noopener">
+              <span class="card__eyebrow">Mar 10, 2026 · New Media Lab</span>
+              <span class="card__title">Vibe-Coding Prototypes</span>
+              <span class="card__desc">Participants use Gemini CLI to plan, customize, and test a browser-based focus timer before publishing it with GitHub Pages. Staged changes and version control make the agentic development loop visible.</span>
+              <span class="card__host">cuny-ai-lab.github.io/vibe-coding-prototypes</span>
+            </a>
+          </div>
+
+          <div class="workshop-row workshop-row--two">
+            <a class="card workshop-card" href="https://zmuhls.github.io/prompting-in-praxis/" target="_blank" rel="noopener">
+              <span class="card__eyebrow">May 9, 2025 · TLC showcase</span>
+              <span class="card__title">Prompting in Praxis</span>
+              <span class="card__desc">Participants explore language-model concepts through historical text completion, visual document analysis, and cross-model comparison in CUNY’s Open WebUI pilot. They verify outputs against primary sources while documenting uncertainty, attribution, and limits.</span>
+              <span class="card__host">zmuhls.github.io/prompting-in-praxis</span>
+            </a>
+            <a class="card workshop-card" href="https://zmuhl.net/teaching.html" target="_blank" rel="noopener">
+              <span class="card__eyebrow">Mar 2025 · New Media Lab</span>
+              <span class="card__title">Hacking AI for Historical Research</span>
+              <span class="card__desc">Participants apply OCR, transcription cleanup, structured notes, and thematic coding to small primary-source corpora. They pair those methods with questions of provenance, citation, ethics, and commercial inference.</span>
+              <span class="card__host">zmuhl.net/teaching.html</span>
+            </a>
+          </div>
+
+          <div class="workshop-row workshop-row--three">
+            <a class="card workshop-card" href="https://drive.google.com/drive/folders/1HkfMt9hWrFUesT85az75tZKHN_KoTsKI?usp=sharing" target="_blank" rel="noopener">
+              <span class="card__eyebrow">Oct 16, 2024 · TLC</span>
+              <span class="card__title">AI Literacy &amp; Game-Based Learning</span>
+              <span class="card__desc">Storytelling, collaborative games, doodling, and notecard activities develop critical AI literacy. Participants examine model training and bias through Google’s Quick, Draw game, then design choose-your-own-adventure prompts.</span>
+              <span class="card__host">drive.google.com · workshop materials</span>
+            </a>
+            <a class="card workshop-card" href="https://drive.google.com/drive/folders/10c9-oiAUOYh-s7IqYYt-ZvcUMqu0Rzkr?usp=sharing" target="_blank" rel="noopener">
+              <span class="card__eyebrow">Mar 4, 2024 · TLC</span>
+              <span class="card__title">AI Literacy &amp; Disciplinary Thinking</span>
+              <span class="card__desc">This Hyflex workshop considers how privacy, intellectual property, and bias should shape discipline-specific AI use. Participants apply the four A’s—application, agency, authenticity, and accountability—to revise an assignment.</span>
+              <span class="card__host">drive.google.com · workshop materials</span>
+            </a>
+            <a class="card workshop-card" href="https://www.gc.cuny.edu/events/using-generative-ai-uncreative-writing" target="_blank" rel="noopener">
+              <span class="card__eyebrow">Nov 9, 2023 · TLC</span>
+              <span class="card__title">Using Generative AI for “Uncreative Writing”</span>
+              <span class="card__desc">Cut-ups, patchwriting, and uncreative-writing practices reframe plagiarism, remix, borrowing, and academic integrity with generative AI. Participants consider how these tools might support writing pedagogy without becoming either catastrophe or cure-all.</span>
+              <span class="card__host">gc.cuny.edu/events</span>
+            </a>
+          </div>
+        </div>
+      </details>
+
+      <details class="section" open>
+        <summary>
+          <span class="section__title">Presentations <span class="section__count">03</span></span>
           <span class="section__hint"></span>
         </summary>
         <div class="grid">
-          <a class="card" href="https://cuny-ai-lab.github.io/system-prompting/" target="_blank" rel="noopener">
-            <span class="card__eyebrow">CCNY PD · Workshop 1</span>
-            <span class="card__title">Composing System Prompts</span>
-            <span class="card__desc">CCNY professional development session on writing effective system prompts for Open WebUI models in the Sandbox.</span>
-            <span class="card__host">cuny-ai-lab.github.io/system-prompting</span>
+          <a class="card" href="https://cuny-ai-lab.github.io/ach-2026/" target="_blank" rel="noopener">
+            <span class="card__eyebrow">Jun 26, 2026 · ACH 2026</span>
+            <span class="card__title">Building Community-Oriented Infrastructures for AI Experimentation</span>
+            <span class="card__desc">This ACH 2026 panel presented the CUNY AI Lab’s open, zero-retention infrastructure for classroom experimentation, including AmigAI, multilingual transcription, and document OCR. It paired those demonstrations with a critical discussion of corporate AI, open-washing, environmental costs, and the responsibilities of hands-on digital-humanities practice.</span>
+            <span class="card__host">cuny-ai-lab.github.io/ach-2026</span>
           </a>
-          <a class="card" href="https://cuny-ai-lab.github.io/knowledge-collections/" target="_blank" rel="noopener">
-            <span class="card__eyebrow">CCNY PD · Workshop 2</span>
-            <span class="card__title">Curating Knowledge Collections</span>
-            <span class="card__desc">CCNY professional development session on building and curating knowledge collections in the Sandbox.</span>
-            <span class="card__host">cuny-ai-lab.github.io/knowledge-collections</span>
+          <a class="card" href="https://cuny-ai-lab.github.io/cali-narst/" target="_blank" rel="noopener">
+            <span class="card__eyebrow">Apr 21, 2026 · NARST</span>
+            <span class="card__title">Community, Transparency, and Tinkering for Just Futures</span>
+            <span class="card__desc">This NARST related-paper set brought CALI’s community, transparency, and tinkering practices into the conference’s technology-for-teaching strand. Its four talks examined scholarly agency, collective world-building, infrastructure learned through breakdown and reconfiguration, and resistance to AI-inevitability rhetoric in science education.</span>
+            <span class="card__host">cuny-ai-lab.github.io/cali-narst</span>
           </a>
-          <a class="card" href="https://github.com/CUNY-AI-Lab/skills-tools" target="_blank" rel="noopener">
-            <span class="card__eyebrow">CCNY PD · Workshop 3</span>
-            <span class="card__title">Skills &amp; Tools</span>
-            <span class="card__desc">CCNY professional development session on skills, tools, and agentic workflows in the Sandbox.</span>
-            <span class="card__host">github.com/CUNY-AI-Lab/skills-tools</span>
-          </a>
-          <a class="card" href="https://github.com/CUNY-AI-Lab/workshops/tree/master/ai-policy-basics" target="_blank" rel="noopener">
-            <span class="card__eyebrow">Workshop program</span>
-            <span class="card__title">AI Basics &amp; Policy Statements</span>
-            <span class="card__desc">Demystifies AI and helps instructors craft thoughtful, responsive classroom policies.</span>
-            <span class="card__host">github.com/CUNY-AI-Lab/workshops/ai-policy-basics</span>
-          </a>
-          <a class="card" href="https://github.com/CUNY-AI-Lab/workshops/tree/master/disciplinary-thinking" target="_blank" rel="noopener">
-            <span class="card__eyebrow">Workshop program</span>
-            <span class="card__title">AI Literacy &amp; Disciplinary Thinking</span>
-            <span class="card__desc">Integrating AI literacy into disciplinary teaching and assignment design.</span>
-            <span class="card__host">github.com/CUNY-AI-Lab/workshops/disciplinary-thinking</span>
-          </a>
-          <a class="card" href="https://github.com/CUNY-AI-Lab/workshops/tree/master/game-based-learning" target="_blank" rel="noopener">
-            <span class="card__eyebrow">Workshop program</span>
-            <span class="card__title">AI Literacy &amp; Game-Based Learning</span>
-            <span class="card__desc">Game-based strategies for teaching with and about AI, including choose-your-own-adventure prompting.</span>
-            <span class="card__host">github.com/CUNY-AI-Lab/workshops/game-based-learning</span>
-          </a>
-          <a class="card" href="https://github.com/CUNY-AI-Lab/workshops/tree/master/prompting-in-praxis" target="_blank" rel="noopener">
-            <span class="card__eyebrow">Workshop program</span>
-            <span class="card__title">Prompting in Praxis</span>
-            <span class="card__desc">LLM concepts and hands-on prompting techniques for academics and instructors.</span>
-            <span class="card__host">github.com/CUNY-AI-Lab/workshops/prompting-in-praxis</span>
-          </a>
-<a class="card" href="https://cuny-ai-lab.github.io/critical-play/" target="_blank" rel="noopener">
-            <span class="card__eyebrow">Game-based</span>
-            <span class="card__title">Critical Play with LLMs</span>
-            <span class="card__desc">Game mechanics, including Jeopardy-LM, used to surface AI limitations and prompt critical reflection.</span>
-            <span class="card__host">cuny-ai-lab.github.io/critical-play</span>
-          </a>
-          <a class="card" href="https://cuny-ai-lab.github.io/creative-coding/" target="_blank" rel="noopener">
-            <span class="card__eyebrow">CALI Spotlight</span>
-            <span class="card__title">Creative Coding with Generative AI</span>
-            <span class="card__desc">Creative-coding triangle (rules, randomness, interpretation) and prompt anatomy through hands-on constrained generation.</span>
-            <span class="card__host">cuny-ai-lab.github.io/creative-coding</span>
-          </a>
-          <a class="card" href="https://cuny-ai-lab.github.io/vibe-coding-how-to/" target="_blank" rel="noopener">
-            <span class="card__eyebrow">Vibe coding</span>
-            <span class="card__title">Vibe Coding How-To</span>
-            <span class="card__desc">Operational instructions and how-to guides for AI-assisted development tools.</span>
-            <span class="card__host">cuny-ai-lab.github.io/vibe-coding-how-to</span>
-          </a>
-          <a class="card" href="https://cuny-ai-lab.github.io/Vibe-Coding-Workshop/" target="_blank" rel="noopener">
-            <span class="card__eyebrow">Vibe coding</span>
-            <span class="card__title">Co-Developing with Generative AI</span>
-            <span class="card__desc">Reveal.js workshop introducing command-line agents for AI-powered development.</span>
-            <span class="card__host">cuny-ai-lab.github.io/Vibe-Coding-Workshop</span>
-          </a>
-          <a class="card" href="https://cuny-ai-lab.github.io/vibe-coding-prototypes/" target="_blank" rel="noopener">
-            <span class="card__eyebrow">Vibe coding</span>
-            <span class="card__title">Vibe Coding Prototypes</span>
-            <span class="card__desc">A showcase of prototypes produced during vibe coding sessions.</span>
-            <span class="card__host">cuny-ai-lab.github.io/vibe-coding-prototypes</span>
-          </a>
-          <a class="card" href="https://cuny-ai-lab.github.io/gen-dev-foundations/" target="_blank" rel="noopener">
-            <span class="card__eyebrow">Gen dev</span>
-            <span class="card__title">Gen Dev Foundations</span>
-            <span class="card__desc">Foundational concepts for generative development practice.</span>
-            <span class="card__host">cuny-ai-lab.github.io/gen-dev-foundations</span>
+          <a class="card" href="https://cuny-ai-lab.github.io/cali-brooklyn/" target="_blank" rel="noopener">
+            <span class="card__eyebrow">Mar 25, 2026 · Brooklyn College</span>
+            <span class="card__title">Brooklyn CALI</span>
+            <span class="card__desc">Presented at Brooklyn College, this CALI overview traced the institute’s faculty development, research, technical development, and advocacy work across CUNY cohorts. Luke Waltzer, Laurie Hurson, and Zach Muhlbauer connected that program to mixed-methods inquiry, course-specific teaching interventions, and hands-on experimentation with shared AI infrastructure.</span>
+            <span class="card__host">cuny-ai-lab.github.io/cali-brooklyn</span>
           </a>
         </div>
       </details>
@@ -656,27 +740,6 @@
             <span class="card__title">Español Hunter</span>
             <span class="card__desc">Spanish-language exploratory space hosted under the CUNYGradCenter org.</span>
             <span class="card__host">huggingface.co/spaces/CUNYGradCenter/Espanol_Hunter</span>
-          </a>
-        </div>
-      </details>
-
-      <details class="section">
-        <summary>
-          <span class="section__title">Presentations <span class="section__count">02</span></span>
-          <span class="section__hint"></span>
-        </summary>
-        <div class="grid">
-          <a class="card" href="https://cuny-ai-lab.github.io/cali-narst/" target="_blank" rel="noopener">
-            <span class="card__eyebrow">NARST 2026</span>
-            <span class="card__title">CALI · NARST 2026</span>
-            <span class="card__desc">Critical AI Literacy Institute presentation deck for NARST 2026.</span>
-            <span class="card__host">cuny-ai-lab.github.io/cali-narst</span>
-          </a>
-          <a class="card" href="https://cuny-ai-lab.github.io/cali-brooklyn/" target="_blank" rel="noopener">
-            <span class="card__eyebrow">Brooklyn College</span>
-            <span class="card__title">CALI · Brooklyn College</span>
-            <span class="card__desc">Critical AI Literacy Institute campus presentation, Brooklyn College.</span>
-            <span class="card__host">cuny-ai-lab.github.io/cali-brooklyn</span>
           </a>
         </div>
       </details>
